@@ -24,4 +24,10 @@ npm i dotenv
 
 
 
-test.js蠻重要的 ，也可讀一下
+# React Next Project安裝
+
+cd my-next
+npm install react-bootstrap bootstrap
+
+
+
