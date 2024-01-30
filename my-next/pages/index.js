@@ -34,20 +34,30 @@ const contactSkillsRight = [
   "passportGoogle OAuth 登入",
 ];
 export default function Home() {
+  const bubbleTogglehandler = (e) => {
+    let wrap = document.querySelector(".bubbleCluster");
+    wrap.classList.toggle("bubbleShow");
+    if (wrap.classList.contains("bubbleShow")) {
+      e.target.innerText = "停用泡泡";
+      wrap.innerHTML = `
+        <div class='${styleB.bubble} ${styleB.x1}'></div>
+        <div class='${styleB.bubble} ${styleB.x2}'></div>
+        <div class='${styleB.bubble} ${styleB.x3}'></div>
+        <div class='${styleB.bubble} ${styleB.x4}'></div>
+        <div class='${styleB.bubble} ${styleB.x5}'></div>
+        <div class='${styleB.bubble} ${styleB.x6}'></div>
+        <div class='${styleB.bubble} ${styleB.x7}'></div>
+        <div class='${styleB.bubble} ${styleB.x8}'></div>
+        <div class='${styleB.bubble} ${styleB.x9}'></div>
+        <div class='${styleB.bubble} ${styleB.x10}'></div>
+      `;
+    } else {
+      e.target.innerText = "啟用泡泡";
+      wrap.innerHTML = "";
+    }
+  };
   return (
     <Layout>
-      <div className={styleB.bubbleBackgroundWrap}>
-        <div className={`${styleB.bubble} ${styleB.x1}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x2}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x3}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x4}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x5}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x6}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x7}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x8}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x9}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x10}`}></div>
-      </div>
       <section className={style["main-area"]}>
         <div className={style.info}>
           <h1>嗨，I'm Oni.</h1>
@@ -57,6 +67,9 @@ export default function Home() {
             希望找到是 Java SpringBoot + React 相關工作。
           </h2>
           <a href="#about-me-head">了解更多</a>
+          <a onClick={bubbleTogglehandler} style={{ marginLeft: "8rem" }}>
+            停用泡泡
+          </a>
         </div>
         <div className={style["img-area"]}>
           <img src="/project3/images/貓貓彎曲三角形.png" alt="貓貓頭貼" />
@@ -85,13 +98,13 @@ export default function Home() {
               <div className={style["skill-more-information"]}>
                 <div className={style["skill-more-information"]}>
                   <div className={style["skill-more-info-left"]}>
-                    {mainSikksLeft.map((skill) => (
-                      <p>{skill}</p>
+                    {mainSikksLeft.map((skill, index) => (
+                      <p key={skill + index}>{skill}</p>
                     ))}
                   </div>
                   <div className={style["skill-more-info-right"]}>
-                    {mainSikksRight.map((skill) => (
-                      <p>{skill}</p>
+                    {mainSikksRight.map((skill, index) => (
+                      <p key={skill + index}>{skill}</p>
                     ))}
                   </div>
                 </div>
@@ -103,13 +116,13 @@ export default function Home() {
               </div>
               <div className={style["skill-more-information"]}>
                 <div className={style["skill-more-info-left"]}>
-                  {contactSkillsLeft.map((skill) => (
-                    <p>{skill}</p>
+                  {contactSkillsLeft.map((skill, index) => (
+                    <p key={skill + index}>{skill}</p>
                   ))}
                 </div>
                 <div className={style["skill-more-info-right"]}>
-                  {contactSkillsRight.map((skill) => (
-                    <p>{skill}</p>
+                  {contactSkillsRight.map((skill, index) => (
+                    <p key={skill + index}>{skill}</p>
                   ))}
                 </div>
               </div>
@@ -174,7 +187,7 @@ export default function Home() {
               <tr>
                 <td>語言</td>
                 <td>
-                  <p>弱 中 強 精通 母語</p>
+                  <p>弱 ~ 中 ~ 強 ~ 精通 ~ 母語</p>
                   <ul>
                     <li>中文 : 母語</li>
                     <li>英文 : 中</li>

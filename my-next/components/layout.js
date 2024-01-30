@@ -2,22 +2,32 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "./layout.module.css";
 import Head from "next/head";
 import Link from "next/link";
-const navTitle = "CHEN I";
-const projectArray = [
-  { link: "/project-GoGame", name: "圍棋網站" },
-  { link: "/project-Tourism", name: "日本旅遊網站" },
-  { link: "/project-GPA", name: "成績計算網站" },
-  { link: "/project-SnakeGame", name: "貪食蛇" },
-  { link: "/project-Bricks", name: "彈跳球" },
-  { link: "/project-MongoDB", name: "MongoDB" },
-  { link: "/project-Yoichi", name: "夜市APP" },
-];
 
-export default function Layout({ children }) {
+import styleB from "../styles/bubble.module.css";
+
+const navTitle = "CHEN I";
+const UdemyProjectArray = [
+  { link: "/Udemy/project-GoGame", name: "圍棋網站" },
+  { link: "/Udemy/project-Tourism", name: "日本旅遊網站" },
+  { link: "/Udemy/project-GPA", name: "成績計算網站" },
+  { link: "/Udemy/project-SnakeGame", name: "貪食蛇" },
+  { link: "/Udemy/project-Bricks", name: "彈跳球" },
+  { link: "/Udemy/project-MongoDB", name: "MongoDB" },
+];
+const ISpanProjectArray = [
+  { link: "/ISpan/project-FlipCard", name: "翻卡牌遊戲" },
+  { link: "/ISpan/project-OShop", name: "OShop網路商店" },
+];
+const IndividualProjectArray = [
+  { link: "/Oni/project-MyAutoMechine", name: "樹梅派~自動玩遊戲" },
+  { link: "/Oni/project-Yoichi", name: "夜市APP" },
+];
+export default function Layout({ children, bubbleStatus }) {
   return (
     <div>
       <Head>
@@ -36,6 +46,7 @@ export default function Layout({ children }) {
             style={{
               marginLeft: "auto",
               marginRight: "auto",
+              transform: "translate(50%,0)",
             }}
           >
             {navTitle}
@@ -48,7 +59,7 @@ export default function Layout({ children }) {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>
-                <Nav.Link href="/">OverView</Nav.Link>
+                OverView
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
@@ -56,29 +67,52 @@ export default function Layout({ children }) {
                 <Nav.Link className={style.NavLinkHover} href="/">
                   首頁
                 </Nav.Link>
-                {projectArray.map((object, index) => (
-                  <Nav.Link
-                    className={style.NavLinkHover}
-                    key={object.name + index}
-                    href={object.link}
-                  >
-                    {object.name}
-                  </Nav.Link>
-                ))}
 
-                {/* <NavDropdown
-                    title="Dropdown"
-                    id={`offcanvasNavbarDropdown-expand-${false}`}
-                  >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
+                <NavDropdown
+                  className={style.NavLinkHover}
+                  title="獨立開發專案"
+                  id={`offcanvasNavbarDropdown-Individual-expand-${false}`}
+                >
+                  {IndividualProjectArray.map((object, index) => (
+                    <NavDropdown.Item
+                      className={style.NavLinkHover}
+                      key={object.name + index}
+                      href={object.link}
+                    >
+                      {object.name}
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
+                  ))}
+                </NavDropdown>
+                <NavDropdown
+                  className={style.NavLinkHover}
+                  title="UdemyProjects"
+                  id={`offcanvasNavbarDropdown-Udemy-expand-${false}`}
+                >
+                  {UdemyProjectArray.map((object, index) => (
+                    <NavDropdown.Item
+                      className={style.NavLinkHover}
+                      key={object.name + index}
+                      href={object.link}
+                    >
+                      {object.name}
                     </NavDropdown.Item>
-                  </NavDropdown> */}
+                  ))}
+                </NavDropdown>
+                <NavDropdown
+                  className={style.NavLinkHover}
+                  title="資展國際Projects"
+                  id={`offcanvasNavbarDropdown-international-expand-${false}`}
+                >
+                  {ISpanProjectArray.map((object, index) => (
+                    <NavDropdown.Item
+                      className={style.NavLinkHover}
+                      key={object.name + index}
+                      href={object.link}
+                    >
+                      {object.name}
+                    </NavDropdown.Item>
+                  ))}
+                </NavDropdown>
               </Nav>
               {/* <Form className="d-flex">
                   <Form.Control
@@ -93,6 +127,20 @@ export default function Layout({ children }) {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
+      <div
+        className={`${styleB["bubble-background-wrap"]} bubbleCluster  bubbleShow`}
+      >
+        <div className={`${styleB.bubble} ${styleB.x1}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x2}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x3}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x4}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x5}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x6}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x7}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x8}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x9}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x10}`}></div>
+      </div>
       <section style={{ marginTop: "10vh" }}>{children}</section>
       <footer>
         <div>
