@@ -4,6 +4,35 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../styles/Home.module.css";
 import styleB from "../styles/bubble.module.css";
 
+const mainSikksLeft = ["Java", "SpringBoot", "HTML", "CSS", "JavaScript"];
+const mainSikksRight = [
+  "Node.js",
+  "Express",
+  "React",
+  "Next",
+  "MySQL",
+  "MongoDB",
+];
+const contactSkillsLeft = [
+  "Swagger",
+  "unitest",
+  "IntegratedTest",
+  "Spring JWT",
+  "AOP",
+  "Filter",
+  "Mockito",
+  "Lombok",
+  "ObjectMapper",
+  "docker 部署 springboot專案",
+];
+const contactSkillsRight = [
+  "Next.js",
+  "React",
+  "EJS",
+  "Sass",
+  "passport JWT 登入",
+  "passportGoogle OAuth 登入",
+];
 export default function Home() {
   return (
     <Layout>
@@ -17,7 +46,7 @@ export default function Home() {
         <div className={`${styleB.bubble} ${styleB.x7}`}></div>
         <div className={`${styleB.bubble} ${styleB.x8}`}></div>
         <div className={`${styleB.bubble} ${styleB.x9}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x1}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x10}`}></div>
       </div>
       <section className={style["main-area"]}>
         <div className={style.info}>
@@ -25,7 +54,7 @@ export default function Home() {
           <h2>
             想往後端工程師發展，但前端頁面也有概念、能實作。
             <br />
-            希望找到是JAVA SpringBoot相關工作。
+            希望找到是 Java SpringBoot + React 相關工作。
           </h2>
           <a href="#about-me-head">了解更多</a>
         </div>
@@ -46,7 +75,7 @@ export default function Home() {
             當兵後想說找純軟，覺得能力不夠看 + 得知政府補助資訊，就去資策會進修
             Java 跟 Spring
             的部分，2023/5/18結訓。後歷經開刀，開始投遞Resume已是8月了，
-            佛系投履歷，期間自修加深SpringBoot與全端技能。
+            佛系投履歷，期間自修加深SpringBoot與透過Udemy增加一些全端技能。
           </p>
           <div className={style["skill-descriptions"]}>
             <div className={style["skill-description"]}>
@@ -54,7 +83,18 @@ export default function Home() {
                 <h3>主要技能</h3>
               </div>
               <div className={style["skill-more-information"]}>
-                <p>Java、SpringBoot、HTML、CSS 、JavaScript 、MySQL . . .</p>
+                <div className={style["skill-more-information"]}>
+                  <div className={style["skill-more-info-left"]}>
+                    {mainSikksLeft.map((skill) => (
+                      <p>{skill}</p>
+                    ))}
+                  </div>
+                  <div className={style["skill-more-info-right"]}>
+                    {mainSikksRight.map((skill) => (
+                      <p>{skill}</p>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
             <div className={style["skill-description"]}>
@@ -62,11 +102,16 @@ export default function Home() {
                 <h3>接觸過</h3>
               </div>
               <div className={style["skill-more-information"]}>
-                <p>
-                  Swagger、unitest、integrated test、Postman、Ngrok (for WAN )
-                  、JWT、SpringSecurity、AOP、Filter、Mockito、Lombok、ObjectMapper
-                  (Json、Gson之類)... docker 部署 springboot專案 。
-                </p>
+                <div className={style["skill-more-info-left"]}>
+                  {contactSkillsLeft.map((skill) => (
+                    <p>{skill}</p>
+                  ))}
+                </div>
+                <div className={style["skill-more-info-right"]}>
+                  {contactSkillsRight.map((skill) => (
+                    <p>{skill}</p>
+                  ))}
+                </div>
               </div>
             </div>
             <div className={style["skill-description"]}>
@@ -74,7 +119,10 @@ export default function Home() {
                 <h3>Tools</h3>
               </div>
               <div className={style["skill-more-information"]}>
-                <p>Mongodb、Docker、Git、Eclipse、Idea、.md (筆記) . . .</p>
+                <p>
+                  Postman、Ngrok 、Docker、Git、Eclipse、Idea、VsCode、.md
+                  (MarkText)、Render (雲端部屬) . . .
+                </p>
               </div>
             </div>
           </div>
@@ -104,8 +152,8 @@ export default function Home() {
               <tr style={{ borderTop: "solid gray 2px" }}>
                 <td style={{ width: "20%" }}>自我簡介</td>
                 <td style={{ width: "80%" }}>
-                  宜大畢，尋找 Web 職缺中，熟悉Java
-                  SpringBoot，喜歡一語多意的雙關梗。
+                  宜大畢，尋找 Web 職缺中，喜歡一語多意的雙關梗、
+                  <br /> ACG、J-Music。
                 </td>
               </tr>
               <tr>
@@ -117,9 +165,9 @@ export default function Home() {
                 <td>
                   <ul>
                     <li>大學專題</li>
+                    <li>自製專案</li>
                     <li>資策會專題</li>
                     <li>Udemy課程</li>
-                    <li>自製專案</li>
                   </ul>
                 </td>
               </tr>
@@ -153,6 +201,11 @@ export default function Home() {
                   />
                   、
                   <img
+                    src="/project3/images/ICONS/icons8-react.svg"
+                    alt="ReactIcon"
+                  />
+                  、
+                  <img
                     src="/project3/images/ICONS/icons8-java.svg"
                     alt="JavaIcon"
                   />
@@ -173,7 +226,7 @@ export default function Home() {
                     <li>
                       樹梅派auto game playing machine (Python+opencv+GPIO)
                     </li>
-                    <li>數個 Web 網頁</li>
+                    <li>數個 Web 網頁，詳閱側邊欄位</li>
                   </ul>
                 </td>
               </tr>
@@ -181,7 +234,7 @@ export default function Home() {
           </table>
         </section>
         <section className={style.picture}>
-          <img src="/project3/images/oni.png" alt="me" />
+          <img src="/project3/images/portrait.jpg" alt="me" />
           <div className={style.greenRect1}></div>
           <div className={style.greenRect2}></div>
           <div className={style.greenRect3}></div>

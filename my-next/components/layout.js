@@ -1,11 +1,9 @@
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
+import style from "./layout.module.css";
 import Head from "next/head";
 import Link from "next/link";
 const navTitle = "CHEN I";
@@ -55,9 +53,15 @@ export default function Layout({ children }) {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/">首頁</Nav.Link>
+                <Nav.Link className={style.NavLinkHover} href="/">
+                  首頁
+                </Nav.Link>
                 {projectArray.map((object, index) => (
-                  <Nav.Link key={object.name + index} href={object.link}>
+                  <Nav.Link
+                    className={style.NavLinkHover}
+                    key={object.name + index}
+                    href={object.link}
+                  >
                     {object.name}
                   </Nav.Link>
                 ))}
@@ -92,23 +96,13 @@ export default function Layout({ children }) {
       <section style={{ marginTop: "10vh" }}>{children}</section>
       <footer>
         <div>
-          <a target="_blank" href="https://icons8.com/icon/13679/java">
-            Java
-          </a>
-          icon by{" "}
-          <a target="_blank" href="https://icons8.com">
-            Icons8
-          </a>{" "}
-          <br />
-        </div>
-        <div>
-          <a target="_blank" href="https://icons8.com/icon/90519/spring-boot">
-            Spring Boot
-          </a>
-          icon by{" "}
-          <a target="_blank" href="https://icons8.com">
-            Icons8
-          </a>
+          Power by NextJS{" "}
+          <img
+            style={{ height: "2rem", width: "2rem" }}
+            src="/project3/images/ICONS/icons8-nextjs.svg"
+            alt="nextjs"
+          />
+          icons by <a href="https://icons8.com">Icons8</a>
         </div>
       </footer>
     </div>

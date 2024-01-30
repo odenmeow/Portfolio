@@ -68,7 +68,7 @@ section.about-me
   .skill-descriptions
   .skill-description
   .skill-main-title {
-  flex: 1 1 200px;
+  flex-basis: 33%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,19 +93,37 @@ section.about-me
   .skill-descriptions
   .skill-description
   .skill-more-information {
-  flex: 1 1 400px;
+  flex-basis: 66%;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
-}
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+.skill-more-info-left {
+  flex-basis: 50%;
+}
+.skill-more-info-right {
+  flex-basis: 50%;
+}
 section.about-me
   section.description
   .skill-descriptions
   .skill-description
   .skill-more-information
   p {
-  display: inline-block;
-  margin: 0.5rem;
+  display: block;
+  margin: 0;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: rgba(242, 249, 205, 0.8);
+  border-radius: 5px;
+  width: fit-content;
 }
 section.about-me section.description .my-skills-group {
   text-align: center;
