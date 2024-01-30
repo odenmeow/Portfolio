@@ -3,7 +3,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../styles/Home.module.css";
 import styleB from "../styles/bubble.module.css";
-
+import Image from "next/image";
 const mainSikksLeft = ["Java", "SpringBoot", "HTML", "CSS", "JavaScript"];
 const mainSikksRight = [
   "Node.js",
@@ -40,16 +40,16 @@ export default function Home() {
     if (wrap.classList.contains("bubbleShow")) {
       e.target.innerText = "停用泡泡";
       wrap.innerHTML = `
-        <div class='${styleB.bubble} ${styleB.x1}'></div>
-        <div class='${styleB.bubble} ${styleB.x2}'></div>
-        <div class='${styleB.bubble} ${styleB.x3}'></div>
-        <div class='${styleB.bubble} ${styleB.x4}'></div>
-        <div class='${styleB.bubble} ${styleB.x5}'></div>
-        <div class='${styleB.bubble} ${styleB.x6}'></div>
-        <div class='${styleB.bubble} ${styleB.x7}'></div>
-        <div class='${styleB.bubble} ${styleB.x8}'></div>
-        <div class='${styleB.bubble} ${styleB.x9}'></div>
-        <div class='${styleB.bubble} ${styleB.x10}'></div>
+        <div class="${styleB.bubble} ${styleB.x1}"></div>
+        <div class="${styleB.bubble} ${styleB.x2}"></div>
+        <div class="${styleB.bubble} ${styleB.x3}"></div>
+        <div class="${styleB.bubble} ${styleB.x4}"></div>
+        <div class="${styleB.bubble} ${styleB.x5}"></div>
+        <div class="${styleB.bubble} ${styleB.x6}"></div>
+        <div class="${styleB.bubble} ${styleB.x7}"></div>
+        <div class="${styleB.bubble} ${styleB.x8}"></div>
+        <div class="${styleB.bubble} ${styleB.x9}"></div>
+        <div class="${styleB.bubble} ${styleB.x10}"></div>
       `;
     } else {
       e.target.innerText = "啟用泡泡";
@@ -60,7 +60,7 @@ export default function Home() {
     <Layout>
       <section className={style["main-area"]}>
         <div className={style.info}>
-          <h1>嗨，I'm Oni.</h1>
+          <h1>嗨，I&apos;m Oni.</h1>
           <h2>
             想往後端工程師發展，但前端頁面也有概念、能實作。
             <br />
@@ -72,7 +72,15 @@ export default function Home() {
           </a>
         </div>
         <div className={style["img-area"]}>
-          <img src="/project3/images/貓貓彎曲三角形.png" alt="貓貓頭貼" />
+          <Image
+            className={style.nextImage}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "90%", height: "auto" }}
+            src="/project3/images/貓貓彎曲三角形.png"
+            alt="貓貓頭貼"
+          />
         </div>
       </section>
 
@@ -198,32 +206,44 @@ export default function Home() {
               <tr>
                 <td>專長</td>
                 <td>
-                  <img
+                  <Image
+                    width={48}
+                    height={48}
                     src="/project3/images/ICONS/icons8-css3.svg"
                     alt="CSSIcon"
                   />
                   、
-                  <img
+                  <Image
+                    width={48}
+                    height={48}
                     src="/project3/images/ICONS/icons8-html-5.svg"
                     alt="HTMLIcon"
                   />
                   、
-                  <img
+                  <Image
+                    width={48}
+                    height={48}
                     src="/project3/images/ICONS/icons8-javascript.svg"
                     alt="JavaScriptIcon"
                   />
                   、
-                  <img
+                  <Image
+                    width={48}
+                    height={48}
                     src="/project3/images/ICONS/icons8-react.svg"
                     alt="ReactIcon"
                   />
                   、
-                  <img
+                  <Image
+                    width={48}
+                    height={48}
                     src="/project3/images/ICONS/icons8-java.svg"
                     alt="JavaIcon"
                   />
                   、
-                  <img
+                  <Image
+                    width={48}
+                    height={48}
                     src="/project3/images/ICONS/icons8-spring-boot.svg"
                     alt="SpringBootIcon"
                   />
@@ -247,7 +267,18 @@ export default function Home() {
           </table>
         </section>
         <section className={style.picture}>
-          <img src="/project3/images/portrait.jpg" alt="me" />
+          <Image
+            className={style.nextImage}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: "90%", height: "auto" }}
+            alt="me"
+            src="/project3/images/portrait.jpg"
+            layout="fill"
+            objectFit="cover"
+          />
+
           <div className={style.greenRect1}></div>
           <div className={style.greenRect2}></div>
           <div className={style.greenRect3}></div>

@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "./layout.module.css";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 import styleB from "../styles/bubble.module.css";
 
@@ -145,7 +146,9 @@ export default function Layout({ children, bubbleStatus }) {
       <footer>
         <div>
           Power by NextJS{" "}
-          <img
+          <Image
+            width={48}
+            height={48}
             style={{ height: "2rem", width: "2rem" }}
             src="/project3/images/ICONS/icons8-nextjs.svg"
             alt="nextjs"
