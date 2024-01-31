@@ -57,7 +57,7 @@ export default function Layout({ children, bubbleStatus }) {
       <Navbar
         expand={false}
         className="navbar-expand-lg bg-body-tertiary mb-3"
-        fixed="top"
+        sticky="top"
       >
         <Container fluid>
           <Navbar.Brand
@@ -85,7 +85,7 @@ export default function Layout({ children, bubbleStatus }) {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link className={style.NavLinkHover} href="/">
+                <Nav.Link as={Link} href="/" className={style.NavLinkHover}>
                   首頁
                 </Nav.Link>
 
@@ -134,6 +134,9 @@ export default function Layout({ children, bubbleStatus }) {
                     </NavDropdown.Item>
                   ))}
                 </NavDropdown>
+                <Nav.Link className={style.NavLinkHover} href="/OniNote">
+                  筆記
+                </Nav.Link>
               </Nav>
               {/* <Form className="d-flex">
                   <Form.Control
@@ -149,7 +152,7 @@ export default function Layout({ children, bubbleStatus }) {
         </Container>
       </Navbar>
 
-      <section style={{ marginTop: "10vh" }}>{children}</section>
+      <section>{children}</section>
       <footer>
         <div>
           Power by NextJS{" "}
