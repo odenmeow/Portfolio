@@ -40,7 +40,11 @@ export default function Layout({ children, bubbleStatus }) {
         <link rel="icon" href="../public/favicon.ico" />
       </Head>
 
-      <Navbar expand={false} fixed="top" className="bg-body-tertiary mb-3">
+      <Navbar
+        expand={false}
+        className="navbar-expand-lg bg-body-tertiary mb-3"
+        fixed="top"
+      >
         <Container fluid>
           <Navbar.Brand
             href="#"
@@ -128,6 +132,7 @@ export default function Layout({ children, bubbleStatus }) {
           </Navbar.Offcanvas>
         </Container>
       </Navbar>
+
       <div
         className={`${styleB["bubble-background-wrap"]} bubbleCluster  bubbleShow`}
       >

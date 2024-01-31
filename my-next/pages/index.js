@@ -59,15 +59,20 @@ export default function Home() {
   return (
     <Layout>
       <section className={style["main-area"]}>
-        <div className={style.info}>
-          <h1>嗨，I&apos;m Oni.</h1>
-          <h2>
-            想往後端工程師發展，但前端頁面也有概念、能實作。
-            <br />
-            希望找到是 Java SpringBoot + React 相關工作。
+        <div style={{ position: "relative" }} className={style.info}>
+          <h1 style={{ textAlign: "center" }}>嗨，I&apos;m Oni.</h1>
+          <br />
+          <h2 style={{ textAlign: "center" }}>
+            想往後端工程師發展，前端也能實作。
+            <br /> <br />
+            希望有是 Java SpringBoot + React 相關工作。
           </h2>
           <a href="#about-me-head">了解更多</a>
-          <a onClick={bubbleTogglehandler} style={{ marginLeft: "8rem" }}>
+          <a
+            className={style.stopBubble}
+            onClick={bubbleTogglehandler}
+            style={{ position: "absolute", right: "16px" }}
+          >
             停用泡泡
           </a>
         </div>
@@ -272,11 +277,11 @@ export default function Home() {
             width={0}
             height={0}
             sizes="100vw"
-            style={{ width: "90%", height: "auto" }}
+            style={{ width: "80%", height: "auto" }}
             alt="me"
             src="/project3/images/portrait.jpg"
             layout="fill"
-            objectFit="cover"
+            priority={true}
           />
 
           <div className={style.greenRect1}></div>

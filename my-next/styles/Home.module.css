@@ -7,7 +7,7 @@ section.main-area {
   align-items: center;
 }
 section.main-area div.info {
-  flex-basis: 450px;
+  flex-basis: 375px;
   padding: 1rem;
 }
 section.main-area div.info h1 {
@@ -32,6 +32,9 @@ section.main-area div.info a:hover {
 }
 section.main-area div.img-area {
   flex-basis: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 section.main-area div.img-area img,
 .nextImage {
@@ -166,6 +169,7 @@ section.resume section.picture {
   flex: 2 1 500px;
   position: relative;
   padding: 2rem 0rem;
+  overflow: hidden; /* 防止子元素溢出 */
 }
 section.resume section.picture img,
 .nextImage {
@@ -197,7 +201,9 @@ section.resume section.picture div.greenRect3 {
   position: absolute;
   z-index: -1;
 }
-
+.stopBubble:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 1161px) {
   section.about-me section.description {
     width: 80%;
@@ -207,8 +213,12 @@ section.resume section.picture div.greenRect3 {
     position: relative;
     width: 70%;
   }
+  section.resume {
+    padding: 0;
+  }
   section.resume section.table {
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
     margin: 2rem;
+    padding: 0rem;
   }
 }
