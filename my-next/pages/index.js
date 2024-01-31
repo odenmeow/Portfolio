@@ -32,16 +32,16 @@ const contactSkillsRight = [
   "EJS",
   "Sass",
   "passport JWT 登入",
-  "passportGoogle OAuth 登入",
+  "passport Google OAuth 登入",
 ];
 export default function Home() {
-  let [bubbleStatus, setBubbleStatus] = useState("go");
+  let [bubblestatus, setbubblestatus] = useState("go");
   const bubbleTogglehandler = (e) => {
     let wrap = document.querySelector(".bubbleCluster");
     wrap.classList.toggle("bubbleShow");
     if (wrap.classList.contains("bubbleShow")) {
       e.target.innerText = "停用泡泡";
-      setBubbleStatus("stop");
+      setbubblestatus("go");
       wrap.innerHTML = `
         <div class="${styleB.bubble} ${styleB.x1}"></div>
         <div class="${styleB.bubble} ${styleB.x2}"></div>
@@ -57,11 +57,11 @@ export default function Home() {
     } else {
       e.target.innerText = "啟用泡泡";
       wrap.innerHTML = "";
-      setBubbleStatus("go");
+      setbubblestatus("go");
     }
   };
   return (
-    <Layout bubbleStatus={bubbleStatus}>
+    <Layout bubblestatus={bubblestatus}>
       <section className={style["main-area"]}>
         <div style={{ position: "relative" }} className={style.info}>
           <h1 style={{ textAlign: "center" }}>嗨，I&apos;m Oni.</h1>
@@ -110,7 +110,7 @@ export default function Home() {
           <div className={style["skill-descriptions"]}>
             <div className={style["skill-description"]}>
               <div className={style["skill-main-title"]}>
-                <h3>主要技能</h3>
+                <h3>主技能</h3>
               </div>
               <div className={style["skill-more-information"]}>
                 <div className={style["skill-more-information"]}>

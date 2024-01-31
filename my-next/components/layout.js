@@ -8,7 +8,7 @@ import style from "./layout.module.css";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-
+import { useRouter } from "next/router";
 import styleB from "../styles/bubble.module.css";
 
 const navTitle = "CHEN I";
@@ -28,7 +28,15 @@ const IndividualProjectArray = [
   { link: "/Oni/project-MyAutoMechine", name: "樹梅派~自動玩遊戲" },
   { link: "/Oni/project-Yoichi", name: "夜市APP" },
 ];
-export default function Layout({ children, bubbleStatus }) {
+export default function Layout({ children, bubblestatus }) {
+  console.log("bubblestatus=", bubblestatus);
+  const router = useRouter();
+
+  const navigateToSamePage = (url) => {
+    if (router.asPath !== url) {
+      router.push(url);
+    }
+  };
   return (
     <div style={{ position: "relative" }}>
       <div
@@ -98,7 +106,11 @@ export default function Layout({ children, bubbleStatus }) {
                     <NavDropdown.Item
                       className={style.NavLinkHover}
                       key={object.name + index}
-                      href={object.link}
+                      // as={Link}
+                      // href={object.link}
+                      onClick={() => {
+                        navigateToSamePage(object.link);
+                      }}
                     >
                       {object.name}
                     </NavDropdown.Item>
@@ -113,7 +125,11 @@ export default function Layout({ children, bubbleStatus }) {
                     <NavDropdown.Item
                       className={style.NavLinkHover}
                       key={object.name + index}
-                      href={object.link}
+                      // as={Link}
+                      // href={object.link}
+                      onClick={() => {
+                        navigateToSamePage(object.link);
+                      }}
                     >
                       {object.name}
                     </NavDropdown.Item>
@@ -128,13 +144,24 @@ export default function Layout({ children, bubbleStatus }) {
                     <NavDropdown.Item
                       className={style.NavLinkHover}
                       key={object.name + index}
-                      href={object.link}
+                      // as={Link}
+                      // href={object.link}
+                      onClick={() => {
+                        navigateToSamePage(object.link);
+                      }}
                     >
                       {object.name}
                     </NavDropdown.Item>
                   ))}
                 </NavDropdown>
-                <Nav.Link className={style.NavLinkHover} href="/OniNote">
+                <Nav.Link
+                  className={style.NavLinkHover}
+                  // as={Link}
+                  // href="/OniNote"
+                  onClick={() => {
+                    navigateToSamePage("/OniNote");
+                  }}
+                >
                   筆記
                 </Nav.Link>
               </Nav>
@@ -154,7 +181,7 @@ export default function Layout({ children, bubbleStatus }) {
 
       <section>{children}</section>
       <footer>
-        <div>
+        <div style={{ margin: "2rem 0" }}>
           Power by NextJS{" "}
           <Image
             width={48}

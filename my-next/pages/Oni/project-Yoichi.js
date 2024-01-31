@@ -1,19 +1,19 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../../components/layout";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
-import style from "../styles/Home.module.css";
+import style from "../../styles/Home.module.css";
 import Image from "next/image";
-const NotFoundPage = () => {
+const MyAutoMechine = () => {
   return (
     <Layout>
       <div>
         {/* Add your custom 404 content here */}
         <section className={style["main-area"]}>
           <div style={{ position: "relative" }} className={style.info}>
-            <h1 style={{ textAlign: "center" }}>404 - Not Found</h1>
+            <h1 style={{ textAlign: "center" }}>夜市APP</h1>
             <br />
-
+            <h1 style={{ textAlign: "center" }}>Yoichi</h1>
             <a
               style={{ marginLeft: "50%", transform: "translate(-50%,0)" }}
               href="#about-me-head"
@@ -21,11 +21,22 @@ const NotFoundPage = () => {
               了解更多
             </a>
           </div>
+          {/* <div className={style["img-area"]}>
+            <Image
+              className={style.nextImage}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "90%", height: "auto" }}
+              src="/project3/images/貓貓彎曲三角形.png"
+              alt="貓貓頭貼"
+            />
+          </div> */}
         </section>
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2>關於我的一些事情</h2>
+            <h2>你好阿</h2>
             <p>
               宜大資工系，2021/6畢業，大三專題做 Android
               腦波辨識App，主要負責後端，畢業前又做一個自己的樹梅派App自動玩遊戲裝置，主要是python
@@ -61,4 +72,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default MyAutoMechine;

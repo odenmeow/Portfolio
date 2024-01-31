@@ -8,7 +8,7 @@ section.main-area {
 }
 section.main-area div.info {
   flex-basis: 375px;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 section.main-area div.info h1 {
   font-size: 3.5rem;
@@ -204,9 +204,24 @@ section.resume section.picture div.greenRect3 {
 .stopBubble:hover {
   cursor: pointer;
 }
+.blog-img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-bottom: 1rem;
+}
+
+.blog-img {
+  flex-basis: 30%;
+  flex-shrink: 1;
+
+  margin: 5px;
+}
+
 @media screen and (max-width: 1161px) {
   section.about-me section.description {
-    width: 80%;
+    width: 90%;
   }
   section.resume section.picture img,
   .nextImage {
@@ -220,5 +235,35 @@ section.resume section.picture div.greenRect3 {
     /* transform: scale(1.2); */
     margin: 2rem;
     padding: 0rem;
+  }
+  section.about-me {
+    flex-grow: 1;
+  }
+  section.about-me
+    section.description
+    .skill-descriptions
+    .skill-description
+    .skill-more-information {
+    flex-basis: 75%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: flex-start;
+  }
+  section.about-me
+    section.description
+    .skill-descriptions
+    .skill-description
+    .skill-main-title {
+    flex-basis: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
