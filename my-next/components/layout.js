@@ -46,21 +46,23 @@ export default function Layout({ children, bubbleStatus }) {
         fixed="top"
       >
         <Container fluid>
+          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
+
           <Navbar.Brand
             href="#"
             style={{
               marginLeft: "auto",
               marginRight: "auto",
-              transform: "translate(50%,0)",
+              textAlign: "center",
             }}
           >
             {navTitle}
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
           <Navbar.Offcanvas
             id={`offcanvasNavbar-expand-${false}`}
             aria-labelledby={`offcanvasNavbarLabel-expand-${false}`}
-            placement="end"
+            placement="start"
+            style={{ width: "50%" }}
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>

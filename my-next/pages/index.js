@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../styles/Home.module.css";
 import styleB from "../styles/bubble.module.css";
 import Image from "next/image";
+import { useState } from "react";
 const mainSikksLeft = ["Java", "SpringBoot", "HTML", "CSS", "JavaScript"];
 const mainSikksRight = [
   "Node.js",
@@ -34,11 +35,13 @@ const contactSkillsRight = [
   "passportGoogle OAuth 登入",
 ];
 export default function Home() {
+  let [bubbleStatus, setBubbleStatus] = useState("go");
   const bubbleTogglehandler = (e) => {
     let wrap = document.querySelector(".bubbleCluster");
     wrap.classList.toggle("bubbleShow");
     if (wrap.classList.contains("bubbleShow")) {
       e.target.innerText = "停用泡泡";
+      setBubbleStatus("stop");
       wrap.innerHTML = `
         <div class="${styleB.bubble} ${styleB.x1}"></div>
         <div class="${styleB.bubble} ${styleB.x2}"></div>
@@ -54,10 +57,11 @@ export default function Home() {
     } else {
       e.target.innerText = "啟用泡泡";
       wrap.innerHTML = "";
+      setBubbleStatus("go");
     }
   };
   return (
-    <Layout>
+    <Layout bubbleStatus={bubbleStatus}>
       <section className={style["main-area"]}>
         <div style={{ position: "relative" }} className={style.info}>
           <h1 style={{ textAlign: "center" }}>嗨，I&apos;m Oni.</h1>
