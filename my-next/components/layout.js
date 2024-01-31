@@ -30,7 +30,21 @@ const IndividualProjectArray = [
 ];
 export default function Layout({ children, bubbleStatus }) {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
+      <div
+        className={`${styleB["bubble-background-wrap"]} bubbleCluster  bubbleShow`}
+      >
+        <div className={`${styleB.bubble} ${styleB.x1}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x2}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x3}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x4}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x5}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x6}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x7}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x8}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x9}`}></div>
+        <div className={`${styleB.bubble} ${styleB.x10}`}></div>
+      </div>
       <Head>
         <meta charSet="utf-8" />
         <title>Portfolio</title>
@@ -135,20 +149,6 @@ export default function Layout({ children, bubbleStatus }) {
         </Container>
       </Navbar>
 
-      <div
-        className={`${styleB["bubble-background-wrap"]} bubbleCluster  bubbleShow`}
-      >
-        <div className={`${styleB.bubble} ${styleB.x1}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x2}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x3}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x4}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x5}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x6}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x7}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x8}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x9}`}></div>
-        <div className={`${styleB.bubble} ${styleB.x10}`}></div>
-      </div>
       <section style={{ marginTop: "10vh" }}>{children}</section>
       <footer>
         <div>
