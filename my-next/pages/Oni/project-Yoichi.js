@@ -18,9 +18,11 @@ const YoichiApp = () => {
     let imgs = document.querySelectorAll("img");
     imgs.forEach((img) => {
       let imgParent = img.parentElement;
-      imgParent.style.display = "flex";
-      imgParent.style.justifyContent = "center";
-      imgParent.style.alignItems = "center";
+      if (imgParent.hasAttribute("data-rmiz-content")) {
+        imgParent.style.display = "flex";
+        imgParent.style.justifyContent = "center";
+        imgParent.style.alignItems = "center";
+      }
     });
     // imgParent.style.cssText = "display: flex; justify-content: center; align-items: center;";
   }, []); // 這個空的[]確保這個 effect 只執行一次，即在組件渲染後

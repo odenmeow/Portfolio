@@ -12,7 +12,7 @@ const MyAutoMechine = () => {
   const handleZoomChange = useCallback((shouldZoom) => {
     setIsZoomed(shouldZoom);
   }, []);
-
+  // 不需要位移 不使用useEffect 做渲染後期調整
   return (
     <Layout>
       <div>
