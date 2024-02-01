@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // output: "export",
+  // output: "export", 好像用不用都無所謂ㄟ
 };
 
 module.exports = nextConfig;

@@ -1,9 +1,9 @@
 import React from "react";
 import Layout from "../components/layout";
-import ProgressBar from "react-bootstrap/ProgressBar";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../styles/Home.module.css";
 import Image from "next/image";
+import Link from "next/link";
 const NotFoundPage = () => {
   return (
     <Layout>
@@ -13,17 +13,17 @@ const NotFoundPage = () => {
           <div style={{ position: "relative" }} className={style.info}>
             <h1 style={{ textAlign: "center" }}>404 - Not Found</h1>
             <br />
-
-            <a
+            <Link
               style={{ marginLeft: "50%", transform: "translate(-50%,0)" }}
-              href="#about-me-head"
+              className={style["link-to-home"]}
+              href="/"
             >
               了解更多
-            </a>
+            </Link>
           </div>
         </section>
 
-        <section id="about-me-head" className={style["about-me"]}>
+        {/* <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
             <h2>關於我的一些事情</h2>
             <p>
@@ -55,7 +55,7 @@ const NotFoundPage = () => {
               </div>
             </div>
           </section>
-        </section>
+        </section> */}
       </div>
     </Layout>
   );

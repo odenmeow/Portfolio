@@ -30,6 +30,20 @@ section.main-area div.info a {
 section.main-area div.info a:hover {
   transform: scale(1.2);
 }
+section.main-area div.info .link-to-home {
+  color: white;
+  background-color: rgb(54, 212, 138);
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 2rem 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+section.main-area div.info .link-to-home:hover {
+  transform: scale(1.2);
+}
 section.main-area div.img-area {
   flex-basis: 500px;
   display: flex;
@@ -212,11 +226,28 @@ section.resume section.picture div.greenRect3 {
   margin-bottom: 1rem;
 }
 
-.blog-img {
+.blog-img-container > .blog-img {
   flex-basis: 30%;
   flex-shrink: 1;
-
   margin: 5px;
+  text-align: center;
+}
+
+.blog-img-container > .blog-img-zoomer {
+  flex-basis: 100%;
+  flex-shrink: 1;
+  margin: 5px;
+  transform: translate(25%, 0);
+}
+
+.blog-img-container > .blog-two-img-zoomer {
+  flex-basis: 100%;
+  flex-shrink: 1;
+  margin: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 1161px) {

@@ -105,7 +105,7 @@ export default function Home() {
             當兵後想說找純軟，覺得能力不夠看 + 得知政府補助資訊，就去資策會進修
             Java 跟 Spring
             的部分，2023/5/18結訓。後歷經開刀，開始投遞Resume已是8月了，
-            佛系投履歷，期間自修加深SpringBoot與透過Udemy增加一些全端技能。
+            佛系投履歷期間自修加深SpringBoot、透過Udemy增加一些全端技能。
           </p>
           <div className={style["skill-descriptions"]}>
             <div className={style["skill-description"]}>
@@ -165,7 +165,7 @@ export default function Home() {
             </div>
             <p className={style["my-skills-group"]}>CSS, HTML , JavaScript</p>
             <div className={style.progress}>
-              <ProgressBar striped variant="info" animated now={65} />
+              <ProgressBar striped variant="info" animated now={55} />
             </div>
             <p className={style["my-skills-group"]}>MySQL</p>
             <div className={style.progress}>
@@ -182,8 +182,8 @@ export default function Home() {
               <tr style={{ borderTop: "solid gray 2px" }}>
                 <td style={{ width: "20%" }}>自我簡介</td>
                 <td style={{ width: "80%" }}>
-                  宜大畢，尋找 Web 職缺中，喜歡一語多意的雙關梗、
-                  <br /> ACG、J-Music。
+                  宜大畢，尋找 Web 職缺中。 <br /> 喜歡一語多意的雙關梗、
+                  ACG、J-Music。
                 </td>
               </tr>
               <tr>
