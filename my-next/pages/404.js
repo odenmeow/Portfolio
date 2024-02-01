@@ -18,7 +18,7 @@ const NotFoundPage = () => {
               className={style["link-to-home"]}
               href="/"
             >
-              了解更多
+              回首頁
             </Link>
           </div>
         </section>
