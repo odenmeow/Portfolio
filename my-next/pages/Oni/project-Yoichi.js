@@ -1,9 +1,16 @@
-import React from "react";
 import Layout from "../../components/layout";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../../styles/Home.module.css";
 import Image from "next/image";
+
+import React, { useCallback, useState } from "react";
+import { Controlled as ControlledZoom } from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 const YoichiApp = () => {
+  const [isZoomed, setIsZoomed] = useState(false);
+  const handleZoomChange = useCallback((shouldZoom) => {
+    setIsZoomed(shouldZoom);
+  }, []);
   return (
     <Layout>
       <div>
@@ -14,7 +21,14 @@ const YoichiApp = () => {
             <br />
             <h1 style={{ textAlign: "center" }}>Yoichi</h1>
             <a
-              style={{ marginLeft: "50%", transform: "translate(-50%,0)" }}
+              className={style.stopBubble}
+              style={{ position: "relative", left: "16px" }}
+              href="https://portfolio-104l.onrender.com/yoichi/index"
+            >
+              直接前往
+            </a>
+            <a
+              style={{ position: "absolute", right: "16px" }}
               href="#about-me-head"
             >
               了解更多
@@ -24,46 +38,59 @@ const YoichiApp = () => {
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2>關於我的樹梅派計畫</h2>
+            <h2>夜市APP - 緣起</h2>
             <p>
-              畢業前比較空閒，但也沒去想到找工作的問題，就只是突然想到好像可以做出來，
-              就做了這個樹梅派APP自動控制裝置，主要是 Python OpenCV、GPIO 以及
-              tensorflow 輔助辨識。
+              阿姨在夜市賣小吃，每次有去幫忙的時候，發現很多客人點餐時，點餐+計價、很容易混亂。
             </p>
             <p>
-              有些東西，例如 :
-              LineBot，剛好學校有門課，修到雲端概念的部分，有要求作業要含有雲端概念，
-              當時和另一個年紀較大的美國大叔，一起製作與使用GPIO提供的功能，買零件做出一個測量生態池的裝置，
-              同時，能夠紀錄藻類 (duckweed)
-              的增長速率，透過opencv提供的基本功能，能偵測出綠色的範圍，每日變動的時候透過LineBot通知。
-              <a
-                target="_blank"
-                href="https://docs.google.com/presentation/d/1OGjaPSfjTVycWB6mmuv5dF-BrGopDrvXtwcBdo0DxFY/edit?usp=sharing"
-              >
-                (GOOGLE PPT)
-              </a>
+              {`有時候點餐的樣式很不同，有3、有2，各種不同組合，客人還會走來走去，
+                時不時就可能出現混亂，有時候幫手可能就計算出不同價格，也真的多收錢，
+                諸如此類都會降低再度來訪的可能，為了方便作業，就幫她做一個網頁。`}
+              <br />
             </p>
             <h2>設計</h2>
-            <p style={{ textAlign: "center" }}>
-              關於控制的部分，我是使用GPIO +
-              Relay，然後把鍵盤拆下來，將接點拉出來，透過繼電器模擬人類按鍵盤
+            <p>
+              {`儲存的地方選擇localStorage，因為方便、不須額外連線成本，
+              設置靜態網頁，很快就回應，因為Render靜態網頁不會降速，
+              另外也特別用 lz-string ，作為localStorage的壓縮工具，
+              避免檔案快速龐大，大約可以有半年左右的紀錄，之後再覆蓋或者同步即可，
+              因為是小本生意，最重要是紀錄、計價、顯示。`}
             </p>
             <div className={style["blog-img-container"]}>
-              <Image
-                className={style["blog-img"]}
-                width={0}
-                height={0}
-                sizes="100vw"
-                style={{ width: "50%", height: "auto" }}
-                alt="me"
-                src="/Oni/images/relay_wire.png"
-                layout="fill"
-                priority={true}
-              />
+              <ControlledZoom
+                isZoomed={isZoomed}
+                onZoomChange={handleZoomChange}
+              >
+                <Image
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    transform: "translate(50%,0)",
+                    width: "50%",
+                    height: "auto",
+                  }}
+                  alt="me"
+                  src="/Oni/images/functionEdit.png"
+                  layout="fill"
+                  priority={true}
+                />
+              </ControlledZoom>
             </div>
-            <p>
-              製作個人專屬的Physical Cheat
-              Bot，遊戲就不需要自己動手玩了，只要一邊看著影片一邊等著回饋。
+
+            <h2>操作方式</h2>
+            <p style={{ textAlign: "center" }}>
+              {`先到【功能編輯】去增加商品，透過旁邊藍色按鈕增加，
+            之後可以切換到工作區，裡面可以直接點選數量。
+            `}
+            </p>
+            <p style={{ textAlign: "center" }}>
+              {`ex : 2點取兩次，數量會變成4。
+            `}
+            </p>
+            <p style={{ textAlign: "center" }}>
+              {` 已付的訂單無法修改，只能做廢，避免亂掉。
+            `}
             </p>
             <div className={style["blog-img-container"]}>
               <Image
@@ -83,9 +110,9 @@ const YoichiApp = () => {
               </h2>
             </div>
             <p style={{ textAlign: "center" }}>
-              <a target="_blank" href="https://youtu.be/1lrZnBvX0ho">
+              {/* <a target="_blank" href="https://youtu.be/1lrZnBvX0ho">
                 實機影片
-              </a>
+              </a> */}
             </p>
           </section>
         </section>

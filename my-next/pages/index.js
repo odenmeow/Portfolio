@@ -71,13 +71,18 @@ export default function Home() {
             <br /> <br />
             希望有是 Java SpringBoot + React 相關工作。
           </h2>
-          <a href="#about-me-head">了解更多</a>
           <a
             className={style.stopBubble}
             onClick={bubbleTogglehandler}
-            style={{ position: "absolute", right: "16px" }}
+            style={{ position: "relative", left: "16px" }}
           >
             停用泡泡
+          </a>
+          <a
+            style={{ position: "absolute", right: "16px" }}
+            href="#about-me-head"
+          >
+            了解更多
           </a>
         </div>
         <div className={style["img-area"]}>
