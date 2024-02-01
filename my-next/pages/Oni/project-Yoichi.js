@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../../styles/Home.module.css";
 import Image from "next/image";
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 const YoichiApp = () => {
@@ -11,6 +11,20 @@ const YoichiApp = () => {
   const handleZoomChange = useCallback((shouldZoom) => {
     setIsZoomed(shouldZoom);
   }, []);
+
+  useEffect(() => {
+    // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
+    // 在這裡進行元素選取和樣式修改
+    let imgs = document.querySelectorAll("img");
+    imgs.forEach((img) => {
+      let imgParent = img.parentElement;
+      imgParent.style.display = "flex";
+      imgParent.style.justifyContent = "center";
+      imgParent.style.alignItems = "center";
+    });
+    // imgParent.style.cssText = "display: flex; justify-content: center; align-items: center;";
+  }, []); // 這個空的[]確保這個 effect 只執行一次，即在組件渲染後
+
   return (
     <Layout>
       <div>
@@ -19,10 +33,12 @@ const YoichiApp = () => {
           <div style={{ position: "relative" }} className={style.info}>
             <h1 style={{ textAlign: "center" }}>夜市APP</h1>
             <br />
-            <h1 style={{ textAlign: "center" }}>Yoichi</h1>
+            <h3 style={{ textAlign: "center" }}>Designed for tablet</h3> <br />
+            <h5 style={{ textAlign: "center" }}>建議使用平板或電腦</h5>
             <a
               className={style.stopBubble}
               style={{ position: "relative", left: "16px" }}
+              target="_blank"
               href="https://portfolio-104l.onrender.com/yoichi/index"
             >
               直接前往
@@ -66,7 +82,6 @@ const YoichiApp = () => {
                   height={0}
                   sizes="100vw"
                   style={{
-                    transform: "translate(50%,0)",
                     width: "50%",
                     height: "auto",
                   }}
