@@ -59,23 +59,25 @@ const MyAutoMechine = () => {
             </p>
 
             <div className={style["blog-img-container"]}>
-              <div className={style["blog-img-zoomer"]}>
-                <ControlledZoom
-                  isZoomed={isZoomed}
-                  onZoomChange={handleZoomChange}
-                >
-                  <Image
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    style={{ width: "50%", height: "auto" }}
-                    alt="me"
-                    src="/Oni/images/relay_wire.png"
-                    layout="fill"
-                    priority={true}
-                  />
-                </ControlledZoom>
-              </div>
+              <ControlledZoom
+                isZoomed={isZoomed}
+                onZoomChange={handleZoomChange}
+              >
+                <Image
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    transform: "translate(50%,0)",
+                    width: "50%",
+                    height: "auto",
+                  }}
+                  alt="me"
+                  src="/Oni/images/relay_wire.png"
+                  layout="fill"
+                  priority={true}
+                />
+              </ControlledZoom>
             </div>
 
             <p>
