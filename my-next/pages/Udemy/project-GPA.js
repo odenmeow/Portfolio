@@ -93,10 +93,11 @@ const GPA = () => {
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2>(Udmey Project3)</h2>
+            <h2>GPA Web</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`學習將JS實際融入專案，透過JS達到動態生成元素，animation追加
+              {`製作一個計算GPA的網頁，將JS實際融入專案練習，
+              透過JS達到動態生成元素、animation追加
               、動畫結束刪除之類的效果。`}
               <br />
             </p>
@@ -138,7 +139,6 @@ const GPA = () => {
               {`填credit 0~6 以及 A~F即可
             `}
             </p>
-
             <hr />
             <div
               style={{ paddingTop: "1rem" }}

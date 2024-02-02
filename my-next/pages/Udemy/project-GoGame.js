@@ -97,7 +97,7 @@ const GoGame = () => {
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2> (Udmey Project1)</h2>
+            <h2> GoGame Web</h2>
             <p style={{ textAlign: "center" }}>
               {`上課上得差不多後，開始跟著製作第一個課堂專案，將所學應用。`}{" "}
               <br />

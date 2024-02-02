@@ -6,7 +6,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
-const Tourism = () => {
+const MongoDB = () => {
   const [isZoomed, setIsZoomed] = useState(false);
   // 舊版本 ( 不是透過btn關閉，而是有滑鼠事件就自動關閉 )
   // const handleZoomChange = useCallback((shouldZoom) => {
@@ -121,14 +121,14 @@ const Tourism = () => {
         {/* Add your custom 404 content here */}
         <section className={style["main-area"]}>
           <div style={{ position: "relative" }} className={style.info}>
-            <h1 style={{ textAlign: "center" }}>日本旅遊網站</h1>
+            <h1 style={{ textAlign: "center" }}>MongoDB+EJS</h1>
             <br />
-            <h3 style={{ textAlign: "center" }}>僅製作首頁</h3> <br />
+            <h3 style={{ textAlign: "center" }}>學生資訊網</h3> <br />
             <a
               className={style.stopBubble}
               style={{ position: "relative", left: "16px" }}
               target="_blank"
-              href="https://portfolio-104l.onrender.com/project2/index"
+              href="https://portfolio-104l.onrender.com/students"
             >
               直接前往
             </a>
@@ -143,19 +143,36 @@ const Tourism = () => {
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2>Tourism Web</h2>
+            <h2>Student Web</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`練習排版與設計樣式、因為教了scss，所以Udemy講師就做這個為範例，
-              讓我們跟著學習，實際訓練加強flex、position、transition之類概念`}
+              {`基本上是做Restful API，可以新增、修改、刪除、查詢(取得)學生資料的網站。`}
               <br />
             </p>
-            <h2>修正</h2>
+            <h2>技術</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`導覽列fixed的bug，當時沒有考慮手機版本，製作當下發現，還好只需加入bootstrap功能即可`}
+              {`主要是EJS、API、Mongoose的應用`}
               <br />
+              {`使用了method-override，
+              讓方法覆寫`}
+              <br />
+              {`讓表單可以送出GET、POST以外的PUT`}
+              <br />
+              {`實際上也只是模擬而已，為了達成 Restful API`}
+              <br />
+              {`從後端增加middleware，進行攔截行為，`}
+              <br />
+              {`
+              之後再往下傳遞。`}
             </p>
+
+            <p
+              style={{ textAlign: "center" }}
+            >{`詳細內容可以看下方Github Project-Final`}</p>
+            <p
+              style={{ textAlign: "center" }}
+            >{`(UdemyProjects皆用此Git+Render雲端製作)`}</p>
             <div
               style={{ margin: "2rem 0" }}
               className={style["blog-img-container"]}
@@ -175,7 +192,7 @@ const Tourism = () => {
                     height: "auto",
                   }}
                   alt="me"
-                  src="/Udemy/images/Tourism1.png"
+                  src="/Udemy/images/MongoDB1.png"
                   layout="fill"
                   priority={true}
                 />
@@ -196,7 +213,7 @@ const Tourism = () => {
                     height: "auto",
                   }}
                   alt="me"
-                  src="/Udemy/images/Tourism2.png"
+                  src="/Udemy/images/MongoDB2.png"
                   layout="fill"
                   priority={true}
                 />
@@ -208,7 +225,7 @@ const Tourism = () => {
             `}
             </p>
             <p style={{ textAlign: "center" }}>
-              {`沒什麼偉大功能，就單純仿照旅遊網站的感覺的網頁
+              {` 隨意逛逛即可
             `}
             </p>
 
@@ -247,9 +264,9 @@ const Tourism = () => {
                 <p style={{ margin: "0", textAlign: "center" }}>
                   <a
                     target="_blank"
-                    href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project2_%E6%97%A5%E6%9C%AC%E6%97%85%E9%81%8A%E7%B6%B2%E7%AB%99"
+                    href="https://github.com/odenmeow/FullStackLearn/tree/master/Project-Final"
                   >
-                    Project2_Tourism
+                    Udemy Projects EJS
                   </a>
                 </p>
               </div>
@@ -261,4 +278,4 @@ const Tourism = () => {
   );
 };
 
-export default Tourism;
+export default MongoDB;
