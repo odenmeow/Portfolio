@@ -107,10 +107,10 @@ export default function Home() {
             opencv以及tensorflow輔助辨識。
           </p>
           <p>
-            當兵後想說找純軟，覺得能力不夠看 + 得知政府補助資訊，就去資策會進修
-            Java 跟 Spring
+            當兵後想說找純軟，看了看求職資訊，用了很多框架 +
+            得知政府補助資訊，就去資策會進修 Java 跟 Spring
             的部分，2023/5/18結訓。後歷經開刀，開始投遞Resume已是8月了，
-            佛系投履歷期間自修加深SpringBoot、透過Udemy增加一些全端技能。
+            投遞期間自修、加深SpringBoot、從Udemy又增加一些全端技能。
           </p>
           <div className={style["skill-descriptions"]}>
             <div className={style["skill-description"]}>

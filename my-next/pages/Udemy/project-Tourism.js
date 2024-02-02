@@ -8,13 +8,36 @@ import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 const Tourism = () => {
   const [isZoomed, setIsZoomed] = useState(false);
-  const handleZoomChange = useCallback((shouldZoom) => {
-    setIsZoomed(shouldZoom);
-  }, []);
+  // 舊版本 ( 不是透過btn關閉，而是有滑鼠事件就自動關閉 )
+  // const handleZoomChange = useCallback((shouldZoom) => {
+  //   setIsZoomed(shouldZoom);
+  // }, []);
+
+  const handleImageClick = () => {
+    // 點選圖片時進行放大
+    console.log("shouldZoom");
+    setIsZoomed(true);
+    let btn = document.querySelector(".zoom-btn button");
+    console.log(btn);
+    btn.addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+  };
+
   const [isZoomed2, setIsZoomed2] = useState(false);
-  const handleZoomChange2 = useCallback((shouldZoom) => {
-    setIsZoomed2(shouldZoom);
-  }, []);
+  const handleImageClick2 = () => {
+    // 點選圖片時進行放大
+    console.log("shouldZoom");
+    setIsZoomed2(true);
+    let btn = document.querySelector(".zoom-btn2 button");
+    console.log(btn);
+    btn.addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed2(false);
+    });
+  };
+
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
     // 在這裡進行元素選取和樣式修改
@@ -77,9 +100,11 @@ const Tourism = () => {
             >
               <ControlledZoom
                 isZoomed={isZoomed}
-                onZoomChange={handleZoomChange}
+                // onZoomChange={handleZoomChange}
+                classDialog={"zoom-btn"}
               >
                 <Image
+                  onClick={handleImageClick}
                   width={0}
                   height={0}
                   sizes="100vw"
@@ -96,9 +121,11 @@ const Tourism = () => {
 
               <ControlledZoom
                 isZoomed={isZoomed2}
-                onZoomChange={handleZoomChange2}
+                // onZoomChange={handleZoomChange}
+                classDialog={"zoom-btn2"}
               >
                 <Image
+                  onClick={handleImageClick2}
                   width={0}
                   height={0}
                   sizes="100vw"

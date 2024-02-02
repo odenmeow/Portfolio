@@ -8,9 +8,17 @@ import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 const YoichiApp = () => {
   const [isZoomed, setIsZoomed] = useState(false);
-  const handleZoomChange = useCallback((shouldZoom) => {
-    setIsZoomed(shouldZoom);
-  }, []);
+  const handleImageClick = () => {
+    // 點選圖片時進行放大
+    console.log("shouldZoom");
+    setIsZoomed(true);
+    let btn = document.querySelector(".zoom-btn button");
+    console.log(btn);
+    btn.addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+  };
 
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
@@ -75,11 +83,9 @@ const YoichiApp = () => {
               因為是小本生意，最重要是紀錄、計價、顯示。`}
             </p>
             <div className={style["blog-img-container"]}>
-              <ControlledZoom
-                isZoomed={isZoomed}
-                onZoomChange={handleZoomChange}
-              >
+              <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
                 <Image
+                  onClick={handleImageClick}
                   width={0}
                   height={0}
                   sizes="100vw"
