@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
-import Alert from "react-bootstrap/Alert";
 const MyComponent = () => {
   const [isZoomed, setIsZoomed] = useState(false);
 

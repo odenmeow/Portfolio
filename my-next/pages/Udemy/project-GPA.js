@@ -3,10 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../../styles/Home.module.css";
 import Image from "next/image";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
-const MyAutoMechine = () => {
+const GPA = () => {
   const [isZoomed, setIsZoomed] = useState(false);
   const handleImageClick = () => {
     (function showWarn() {
@@ -50,18 +50,40 @@ const MyAutoMechine = () => {
       setIsZoomed(false);
     });
   };
-  // 不需要位移 不使用useEffect 做渲染後期調整
+
+  useEffect(() => {
+    // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
+    // 在這裡進行元素選取和樣式修改
+    let imgs = document.querySelectorAll("img");
+    imgs.forEach((img) => {
+      let imgParent = img.parentElement;
+      if (imgParent.hasAttribute("data-rmiz-content")) {
+        imgParent.style.display = "flex";
+        imgParent.style.justifyContent = "center";
+        imgParent.style.alignItems = "center";
+      }
+    });
+    // imgParent.style.cssText = "display: flex; justify-content: center; align-items: center;";
+  }, []); // 這個空的[]確保這個 effect 只執行一次，即在組件渲染後
+
   return (
     <Layout>
       <div>
         {/* Add your custom 404 content here */}
         <section className={style["main-area"]}>
           <div style={{ position: "relative" }} className={style.info}>
-            <h1 style={{ textAlign: "center" }}>遊戲助手</h1>
+            <h1 style={{ textAlign: "center" }}>GPA計算機</h1>
             <br />
-            <h1 style={{ textAlign: "center" }}>LineBot+GPIO</h1>
             <a
-              style={{ marginLeft: "50%", transform: "translate(-50%,0)" }}
+              className={style.stopBubble}
+              style={{ position: "relative", left: "16px" }}
+              target="_blank"
+              href="https://portfolio-104l.onrender.com/project4/index"
+            >
+              直接前往
+            </a>
+            <a
+              style={{ position: "absolute", right: "16px" }}
               href="#about-me-head"
             >
               了解更多
@@ -71,31 +93,18 @@ const MyAutoMechine = () => {
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2>關於我的樹梅派計畫</h2>
-            <p>
-              畢業前比較空閒，但也沒去想到找工作的問題，就只是突然想到好像可以做出來，
-              就做了這個樹梅派APP自動控制裝置，主要是 Python OpenCV、GPIO 以及
-              tensorflow 輔助辨識。
-            </p>
-            <p>
-              有些東西，例如 :
-              LineBot，剛好學校有門課，修到雲端概念的部分，有要求作業要含有雲端概念，
-              當時和另一個年紀較大的美國大叔一起製作、使用GPIO提供的功能，買零件做出一個測量生態池的裝置，
-              同時，能夠紀錄藻類 (duckweed)
-              的增長速率，透過opencv提供的基本功能，能偵測出綠色的範圍，每日變動的時候透過LineBot通知。
-              <a
-                target="_blank"
-                href="https://docs.google.com/presentation/d/1OGjaPSfjTVycWB6mmuv5dF-BrGopDrvXtwcBdo0DxFY/edit?usp=sharing"
-              >
-                (GOOGLE PPT)
-              </a>
+            <h2>(Udmey Project3)</h2>
+
+            <p style={{ textAlign: "center" }}>
+              {`學習將JS實際融入專案，透過JS達到動態生成元素，animation追加
+              、動畫結束刪除之類的效果。`}
+              <br />
             </p>
             <h2>設計</h2>
             <p style={{ textAlign: "center" }}>
-              關於控制的部分，我是使用GPIO +
-              Relay，然後把鍵盤拆下來，將接點拉出來，透過繼電器模擬人類按鍵盤
+              {`比較特別之處是開場做了一個動畫效果，以及增加或刪除資料的小動態感。`}
             </p>
-
+            <p style={{ textAlign: "center" }}>{`排序則使用mergeSort`}</p>
             <div className={style["blog-img-container"]}>
               <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
                 <Image
@@ -104,25 +113,37 @@ const MyAutoMechine = () => {
                   height={0}
                   sizes="100vw"
                   style={{
-                    transform: "translate(50%,0)",
                     width: "50%",
                     height: "auto",
                   }}
                   alt="me"
-                  src="/Oni/images/relay_wire.png"
+                  src="/Udemy/images/GPA.png"
                   layout="fill"
                   priority={true}
                 />
               </ControlledZoom>
             </div>
-
+            <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
-              製作個人專屬的Physical Cheat
-              Bot，遊戲就不需要自己動手玩了，只要一邊看著影片一邊等著回饋。
+              {`
+             class category可不填
+            `}
             </p>
-            <hr />
+            <p style={{ textAlign: "center" }}>
+              {`
+             class number可不填
+            `}
+            </p>
+            <p style={{ textAlign: "center" }}>
+              {`填credit 0~6 以及 A~F即可
+            `}
+            </p>
 
-            <div className={style["blog-img-container"]}>
+            <hr />
+            <div
+              style={{ paddingTop: "1rem" }}
+              className={style["blog-img-container"]}
+            >
               <div className={style["blog-img"]}>
                 <Image
                   width={48}
@@ -135,8 +156,27 @@ const MyAutoMechine = () => {
               <div className={style["blog-img"]}>
                 {/* <h2 style={{ display: "inline-block", margin: "5px" }}>連結</h2> */}
                 <p style={{ margin: "0", textAlign: "center" }}>
-                  <a target="_blank" href="https://youtu.be/1lrZnBvX0ho">
-                    實機影片
+                  <a target="_blank">無錄製</a>
+                </p>
+              </div>
+            </div>
+            <div className={style["blog-img-container"]}>
+              <Image
+                className={style["blog-img"]}
+                width={48}
+                height={48}
+                alt="me"
+                src="/project3/images/ICONS/icons8-github.svg"
+                layout="fill"
+              />
+              <div className={style["blog-img"]}>
+                {/* <h2 style={{ display: "inline-block", margin: "5px" }}>連結</h2> */}
+                <p style={{ margin: "0", textAlign: "center" }}>
+                  <a
+                    target="_blank"
+                    href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project4_%E6%88%90%E7%B8%BE%E8%A8%88%E7%AE%97%E7%B6%B2%E7%AB%99"
+                  >
+                    Compute GPA
                   </a>
                 </p>
               </div>
@@ -148,4 +188,4 @@ const MyAutoMechine = () => {
   );
 };
 
-export default MyAutoMechine;
+export default GPA;

@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../../styles/Home.module.css";
 import Image from "next/image";
 
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 const YoichiApp = () => {
