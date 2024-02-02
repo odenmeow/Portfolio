@@ -14,12 +14,43 @@ const Tourism = () => {
   // }, []);
 
   const handleImageClick = () => {
+    (function showWarn() {
+      let body = document.querySelector(".zoom-btn > div:nth-child(2)");
+      let warn = document.createElement("div");
+      let text = document.createElement("p");
+      text.style.margin = 0;
+      text.innerText = "雙擊可縮小";
+      warn.append(text);
+      warn.className = "noSend alert alert-info";
+      warn.setAttribute("role", "info");
+      warn.style.position = "absolute";
+      warn.style.right = "5%";
+      warn.style.bottom = "5%";
+      warn.style.width = "content-fit";
+      warn.style.height = "5%";
+      warn.style.margin = "0";
+      warn.style.display = "flex";
+      warn.style.justifyContent = "center";
+      warn.style.alignItems = "center";
+      body.append(warn);
+      warn.addEventListener("animationend", (e) => {
+        // e.target.remove();
+      });
+      warn.style.animation = "opacityTransitions 2.5s ease forwards";
+    })();
+
     // 點選圖片時進行放大
+
     console.log("shouldZoom");
     setIsZoomed(true);
-    let btn = document.querySelector(".zoom-btn button");
-    console.log(btn);
-    btn.addEventListener("click", (e) => {
+
+    let btn = document.querySelector(".zoom-btn");
+    btn.addEventListener("dblclick", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+
+    btn.querySelector("button").addEventListener("click", (e) => {
       console.log("設定為false");
       setIsZoomed(false);
     });
@@ -27,12 +58,43 @@ const Tourism = () => {
 
   const [isZoomed2, setIsZoomed2] = useState(false);
   const handleImageClick2 = () => {
+    (function showWarn() {
+      let body = document.querySelector(".zoom-btn2 > div:nth-child(2)");
+      let warn = document.createElement("div");
+      let text = document.createElement("p");
+      text.style.margin = 0;
+      text.innerText = "雙擊可縮小";
+      warn.append(text);
+      warn.className = "noSend alert alert-info";
+      warn.setAttribute("role", "info");
+      warn.style.position = "absolute";
+      warn.style.right = "5%";
+      warn.style.bottom = "5%";
+      warn.style.width = "content-fit";
+      warn.style.height = "5%";
+      warn.style.margin = "0";
+      warn.style.display = "flex";
+      warn.style.justifyContent = "center";
+      warn.style.alignItems = "center";
+      body.append(warn);
+      warn.addEventListener("animationend", (e) => {
+        // e.target.remove();
+      });
+      warn.style.animation = "opacityTransitions 2.5s ease forwards";
+    })();
+
     // 點選圖片時進行放大
-    console.log("shouldZoom");
+
+    console.log("shouldZoom2");
     setIsZoomed2(true);
-    let btn = document.querySelector(".zoom-btn2 button");
-    console.log(btn);
-    btn.addEventListener("click", (e) => {
+
+    let btn = document.querySelector(".zoom-btn2");
+    btn.addEventListener("dblclick", (e) => {
+      console.log("設定為false");
+      setIsZoomed2(false);
+    });
+
+    btn.querySelector("button").addEventListener("click", (e) => {
       console.log("設定為false");
       setIsZoomed2(false);
     });

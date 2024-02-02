@@ -8,9 +8,51 @@ import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
 const GoGame = () => {
   const [isZoomed, setIsZoomed] = useState(false);
-  const handleZoomChange = useCallback((shouldZoom) => {
-    setIsZoomed(shouldZoom);
-  }, []);
+  // const handleZoomChange = useCallback((shouldZoom) => {
+  //   setIsZoomed(shouldZoom);
+  // }, []);
+  const handleImageClick = () => {
+    (function showWarn() {
+      let body = document.querySelector(".zoom-btn > div:nth-child(2)");
+      let warn = document.createElement("div");
+      let text = document.createElement("p");
+      text.style.margin = 0;
+      text.innerText = "雙擊可縮小";
+      warn.append(text);
+      warn.className = "noSend alert alert-info";
+      warn.setAttribute("role", "info");
+      warn.style.position = "absolute";
+      warn.style.right = "5%";
+      warn.style.bottom = "5%";
+      warn.style.width = "content-fit";
+      warn.style.height = "5%";
+      warn.style.margin = "0";
+      warn.style.display = "flex";
+      warn.style.justifyContent = "center";
+      warn.style.alignItems = "center";
+      body.append(warn);
+      warn.addEventListener("animationend", (e) => {
+        // e.target.remove();
+      });
+      warn.style.animation = "opacityTransitions 2.5s ease forwards";
+    })();
+
+    // 點選圖片時進行放大
+
+    console.log("shouldZoom");
+    setIsZoomed(true);
+
+    let btn = document.querySelector(".zoom-btn");
+    btn.addEventListener("dblclick", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+
+    btn.querySelector("button").addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+  };
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
     // 在這裡進行元素選取和樣式修改
@@ -64,11 +106,9 @@ const GoGame = () => {
             </p>
 
             <div className={style["blog-img-container"]}>
-              <ControlledZoom
-                isZoomed={isZoomed}
-                onZoomChange={handleZoomChange}
-              >
+              <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
                 <Image
+                  onClick={handleImageClick}
                   width={0}
                   height={0}
                   sizes="100vw"
