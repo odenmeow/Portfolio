@@ -69,7 +69,7 @@ export default function Home() {
           <h2 style={{ textAlign: "center" }}>
             想往後端工程師發展，前端也能實作。
             <br /> <br />
-            希望有是 Java SpringBoot + React 相關工作。
+            尋找 Java SpringBoot + React 相關工作。
           </h2>
           <a
             className={style.stopBubble}
@@ -101,17 +101,54 @@ export default function Home() {
       <section id="about-me-head" className={style["about-me"]}>
         <section className={style.description}>
           <h2>關於我的一些事情</h2>
-          <p>
-            宜大資工系，2021/6畢業，大三專題做 Android
-            腦波辨識App，主要負責後端，畢業前又做一個自己的樹梅派App自動玩遊戲裝置，主要是python
-            opencv以及tensorflow輔助辨識。
+          <p style={{ textAlign: "center" }}>
+            {`宜大資工系，2021/6畢業，`}
+            <br />
+            <br />
+            {`大三專題做Android腦波辨識APP，`}
+            <br />
+            <br />
+            {`主要負責後端，也接手被拋棄的app。`}
+            <br />
+            <br />
+            {`畢業前做了樹梅派自動玩遊戲裝置，`}
+            <br />
+            <br />
+            {`主要是python、opencv，`}
+            <br />
+            <br />
+            {`以及tensorflow輔助辨識。`}
           </p>
-          <p>
-            當兵後想說找純軟，看了看104資訊，發現蠻多都是網站的職缺，
-            剛好得知政府補助資訊，就去資策會進修 Java 跟 Spring
-            的部分，2023/5/18結訓。後歷經開刀，開始投遞Resume已是8月了，
-            投遞期間自修、加深SpringBoot、從Udemy增加一些全端技能。
+
+          <br />
+          <br />
+
+          <p style={{ textAlign: "center" }}>
+            {`當兵後想說找純軟，看了看104資訊，`}
+            <br />
+            <br />
+            {`發現蠻多都是網站的職缺，`}
+            <br />
+            <br />
+            {`剛好得知課程政府有補助資訊，`}
+            <br />
+            <br />
+            {`就去資策會進修 Java、Spring框架，`}
+            <br />
+            <br />
+            {`2023/5/18結訓。後歷經鼻子開刀，`}
+            <br />
+            <br />
+            {`開始投遞Resume已是8月了，`}
+            <br />
+            <br />
+            {`投遞期間自修、加深SpringBoot、`}
+            <br />
+            <br />
+            {`也從Udemy增加一些全端技能。`}
           </p>
+          <br />
+          <hr />
           <div className={style["skill-descriptions"]}>
             <div className={style["skill-description"]}>
               <div className={style["skill-main-title"]}>
