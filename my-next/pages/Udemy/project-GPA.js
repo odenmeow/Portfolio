@@ -95,11 +95,10 @@ const GPA = () => {
           <section className={style.description}>
             <h2>GPA Web</h2>
             <p style={{ textAlign: "center" }}>
-              {`一個計算GPA的網頁，JS實際融入專案練習，`}
-
+              {`計算GPA的網頁，將JS融入專案練習，`}
               <br />
               <br />
-              {`透過JS達到動態生成元素、animation追加`}
+              {`透過JS達到動態生成、animation追加`}
             </p>
             <br />
             <br />

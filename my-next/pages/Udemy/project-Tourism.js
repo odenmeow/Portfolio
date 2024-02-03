@@ -163,10 +163,16 @@ const Tourism = () => {
             <h2>修正</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`導覽列fixed的bug(左圖)，當時沒有考慮手機版本，`}
+              {`導覽列fixed的bug(左圖)，`}
               <br />
               <br />
-              {`製作線上版本時發現，還好只需加入bootstrap功能即可`}
+              {`當時沒有考慮手機版本，`}
+              <br />
+              <br />
+              {`等到製作線上版本時才發現，`}
+              <br />
+              <br />
+              {`還好只需加入bootstrap功能即可。`}
               <br />
             </p>
             <div
@@ -217,12 +223,18 @@ const Tourism = () => {
             </div>
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
-              {` 【手機、電腦皆可】
-            `}
+              {`【手機、電腦皆可】`}
+              <br />
             </p>
+            <br />
+
             <p style={{ textAlign: "center" }}>
-              {`沒什麼特別功能，就單純仿照旅遊網站的感覺的網頁
-            `}
+              {`沒什麼特別功能，`}
+              <br />
+              <br />
+              {`單純仿照旅遊網站的感覺的網頁`}
+              <br />
+              <br />
             </p>
 
             <hr />

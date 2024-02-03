@@ -106,10 +106,12 @@ const SnakeGame = () => {
             <br /> <br />
             <h2>設計</h2>
             <p style={{ textAlign: "center" }}>
-              {`使用鍵盤進行遊戲，主要的功能都在app.js身上，  `}
+              {`使用鍵盤進行遊戲，  `}
+              <br /> <br />
+              {`主要的功能都在app.js身上，  `}
               <br /> <br />
               {`
-              透過操作canvas畫布 + localStorage 計分，完成作品。`}
+              操作canvas畫布 + localStorage 計分。`}
             </p>
             <br />
             <div className={style["blog-img-container"]}>

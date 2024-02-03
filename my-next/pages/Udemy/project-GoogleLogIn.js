@@ -190,9 +190,10 @@ const GoogleLogIn = () => {
             <h2>GoogleLogIn介紹</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`該網站可以簡單地新增貼文、查看user曾發布的消息，
-              `}
+              {`該網站可以簡單地新增貼文、`}
               <br />
+              <br />
+              {`查看自己發布過的消息，`}
             </p>
             <p style={{ textAlign: "center" }}>
               {`最主要是能透過Google進行登入。
@@ -211,7 +212,7 @@ const GoogleLogIn = () => {
               {`使用EJS建出網頁，Google登入主要使用 passport套件，`}
               <br />
               <br />
-              {`做這個登入系統也用了不少middleware概念，`}
+              {`此登入系統也用了不少middleware概念，`}
               <br />
               <br />
               {`做完能更加了解 JS 後端操作。`}

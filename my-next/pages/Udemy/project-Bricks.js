@@ -101,8 +101,9 @@ const Bricks = () => {
             <p style={{ textAlign: "center" }}>
               {`製作小遊戲，類似打磚塊，`}
               <br /> <br />
-              {`不過隨機生成磚塊位置
-              主要目的為訓練邏輯、使用canvas。`}
+              {`不過隨機生成磚塊位置，`}
+              <br /> <br />
+              {`主要為訓練邏輯、使用canvas。`}
             </p>
             <br />
             <br />

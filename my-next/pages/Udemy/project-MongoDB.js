@@ -148,7 +148,10 @@ const MongoDB = () => {
               {`基本上是做Restful API，`}
               <br />
               <br />
-              {`可以新增、修改、刪除、查詢(取得)學生資料的網站。`}
+              {`可以新增、修改、刪除、查詢(取得)`}
+              <br />
+              <br />
+              {`學生資料的網站。`}
               <br />
             </p>
             <br /> <br />
@@ -164,18 +167,18 @@ const MongoDB = () => {
               {`讓表單可以送出GET、POST以外的PUT`}
               <br />
               <br />
-              {`實際上也只是模擬而已，為了達成 Restful API`}
+              {`POST模擬，讓表單玩 Restful API`}
               <br />
               <br />
               {`從後端增加middleware，進行攔截行為，`}
               <br />
               <br />
               {`
-              之後再往下傳遞。`}
+              之後再往下傳遞，`}
             </p>
             <p
               style={{ textAlign: "center" }}
-            >{`詳細內容可以看下方Github Project-Final`}</p>
+            >{`詳細內容在下方Github Project-Final 。`}</p>
             <p
               style={{ textAlign: "center" }}
             >{`(UdemyProjects皆用此Git+Render雲端製作)`}</p>
