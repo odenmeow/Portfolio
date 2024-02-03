@@ -19,6 +19,9 @@ const UdemyProjectArray = [
   { link: "/Udemy/project-SnakeGame", name: "貪食蛇" },
   { link: "/Udemy/project-Bricks", name: "彈跳球" },
   { link: "/Udemy/project-MongoDB", name: "MongoDB" },
+  { link: "/Udemy/project-GoogleLogIn", name: "GoogleLogIn" },
+  { link: "/Udemy/project-PhotoWeb", name: "圖片網站" },
+  { link: "/Udemy/project-MERN", name: "MERN整合網站" },
 ];
 const ISpanProjectArray = [
   { link: "/ISpan/project-FlipCard", name: "翻卡牌遊戲" },
@@ -99,7 +102,7 @@ export default function Layout({ children, bubblestatus }) {
 
                 <NavDropdown
                   className={style.NavLinkHover}
-                  title="獨立開發專案"
+                  title="獨立☆開發專案"
                   id={`offcanvasNavbarDropdown-Individual-expand-${false}`}
                 >
                   {IndividualProjectArray.map((object, index) => (
