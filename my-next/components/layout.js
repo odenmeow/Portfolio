@@ -24,7 +24,7 @@ const UdemyProjectArray = [
   { link: "/Udemy/project-MERN", name: "MERN整合網站" },
 ];
 const ISpanProjectArray = [
-  { link: "/ISpan/project-FlipCard", name: "翻卡牌遊戲" },
+  { link: "/ISpan/project-FlipCard", name: "翻卡牌遊戲💛" },
   { link: "/ISpan/project-OShop", name: "OShop網路商店" },
 ];
 const IndividualProjectArray = [

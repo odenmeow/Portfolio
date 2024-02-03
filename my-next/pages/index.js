@@ -101,6 +101,8 @@ export default function Home() {
       <section id="about-me-head" className={style["about-me"]}>
         <section className={style.description}>
           <h2>關於我的一些事情</h2>
+          <br />
+
           <p style={{ textAlign: "center" }}>
             {`宜大資工系，2021/6畢業，`}
             <br />
