@@ -98,7 +98,7 @@ const SnakeGame = () => {
           <section className={style.description}>
             <h2>Snaker Game</h2>
             <p style={{ textAlign: "center" }}>
-              {`小遊戲，透過鍵盤上下左右來控制蛇的移動方向，`}
+              {`透過鍵盤上下左右來控制蛇的移動方向，`}
               <br /> <br />
               {`
               主要目的為訓練邏輯、學習如何使用canvas。`}
