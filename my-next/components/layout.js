@@ -29,7 +29,7 @@ const ISpanProjectArray = [
 ];
 const IndividualProjectArray = [
   { link: "/Oni/project-MyAutoMechine", name: "樹梅派~自動玩遊戲" },
-  { link: "/Oni/project-Yoichi", name: "夜市APP" },
+  { link: "/Oni/project-Yoichi", name: "夜市APP💛" },
 ];
 export default function Layout({ children, bubblestatus }) {
   console.log("bubblestatus=", bubblestatus);

@@ -123,7 +123,7 @@ const MERN = () => {
           <div style={{ position: "relative" }} className={style.info}>
             <h1 style={{ textAlign: "center" }}>MERN網頁</h1>
             <br />
-            <h3 style={{ textAlign: "center" }}>with JWT</h3> <br />
+            <h3 style={{ textAlign: "center" }}>With JWT</h3> <br />
             <a
               className={style.stopBubble}
               style={{ position: "relative", left: "16px" }}
