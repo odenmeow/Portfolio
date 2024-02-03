@@ -6,8 +6,13 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Controlled as ControlledZoom } from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
-const Bricks = () => {
+const PhotoWeb = () => {
   const [isZoomed, setIsZoomed] = useState(false);
+  // 舊版本 ( 不是透過btn關閉，而是有滑鼠事件就自動關閉 )
+  // const handleZoomChange = useCallback((shouldZoom) => {
+  //   setIsZoomed(shouldZoom);
+  // }, []);
+
   const handleImageClick = () => {
     (function showWarn() {
       let body = document.querySelector(".zoom-btn > div:nth-child(2)");
@@ -51,6 +56,50 @@ const Bricks = () => {
     });
   };
 
+  const [isZoomed2, setIsZoomed2] = useState(false);
+  const handleImageClick2 = () => {
+    (function showWarn() {
+      let body = document.querySelector(".zoom-btn2 > div:nth-child(2)");
+      let warn = document.createElement("div");
+      let text = document.createElement("p");
+      text.style.margin = 0;
+      text.innerText = "雙擊可縮小";
+      warn.append(text);
+      warn.className = "noSend alert alert-info";
+      warn.setAttribute("role", "info");
+      warn.style.position = "absolute";
+      warn.style.right = "5%";
+      warn.style.bottom = "5%";
+      warn.style.width = "content-fit";
+      warn.style.height = "5%";
+      warn.style.margin = "0";
+      warn.style.display = "flex";
+      warn.style.justifyContent = "center";
+      warn.style.alignItems = "center";
+      body.append(warn);
+      warn.addEventListener("animationend", (e) => {
+        // e.target.remove();
+      });
+      warn.style.animation = "opacityTransitions 2.5s ease forwards";
+    })();
+
+    // 點選圖片時進行放大
+
+    console.log("shouldZoom2");
+    setIsZoomed2(true);
+
+    let btn = document.querySelector(".zoom-btn2");
+    btn.addEventListener("dblclick", (e) => {
+      console.log("設定為false");
+      setIsZoomed2(false);
+    });
+
+    btn.querySelector("button").addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed2(false);
+    });
+  };
+
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
     // 在這裡進行元素選取和樣式修改
@@ -72,16 +121,14 @@ const Bricks = () => {
         {/* Add your custom 404 content here */}
         <section className={style["main-area"]}>
           <div style={{ position: "relative" }} className={style.info}>
-            <h1 style={{ textAlign: "center" }}>彈跳球</h1>
+            <h1 style={{ textAlign: "center" }}>PhotoWeb</h1>
             <br />
-            <h3 style={{ textAlign: "center" }}>Designed for computer</h3>{" "}
-            <br />
-            <h5 style={{ textAlign: "center" }}>建議使用電腦</h5>
+            <h3 style={{ textAlign: "center" }}>React+API</h3> <br />
             <a
               className={style.stopBubble}
               style={{ position: "relative", left: "16px" }}
               target="_blank"
-              href="https://portfolio-104l.onrender.com/project6/index"
+              href="https://photoweb.onrender.com/"
             >
               直接前往
             </a>
@@ -96,37 +143,84 @@ const Bricks = () => {
 
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
-            <h2>Bricks Game</h2>
-
+            <h2>介紹</h2>
             <p style={{ textAlign: "center" }}>
-              {`製作小遊戲，類似打磚塊，`}
-              <br /> <br />
-              {`不過隨機生成磚塊位置
-              主要目的為訓練邏輯、使用canvas。`}
+              {`透過API能夠以【英文】搜尋圖片，
+              `}
+              <br />
+              <br />
+              {`由Pexels提供給使用者
+              `}
+              <br />
+              <br />
+              {`最底層製作了load，載入更多的功能 !
+              `}
+              <br />
             </p>
             <br />
             <br />
-            <h2>設計</h2>
+            <h2>目的</h2>
             <p style={{ textAlign: "center" }}>
-              {`一樣使用canvas進行邏輯設計，`}
+              {`本課程主要學習API的使用，`}
               <br />
               <br />
-              {`只是二度練習而已，沒特別考慮外觀。`}
+              {`所有畫面是由React做成，`}
+              <br />
+              <br />
+              {`相較上一個Google登入(EJS)，React更加簡化`}
+              <br />
+              <br />
+              {`雖然剛上手會不習慣，但其實也是JS的應用`}
+              <br />
+              <br />
+              {`SPA為其最大優勢，同時也是其缺點所在`}
+              <br />
+              <br />
+              {`SEO比起傳統HTML，多了些挑戰`}
+              <br />
             </p>
 
-            <div className={style["blog-img-container"]}>
-              <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
+            <div
+              style={{ margin: "2rem 0" }}
+              className={style["blog-img-container"]}
+            >
+              <ControlledZoom
+                isZoomed={isZoomed}
+                // onZoomChange={handleZoomChange}
+                classDialog={"zoom-btn"}
+              >
                 <Image
                   onClick={handleImageClick}
                   width={0}
                   height={0}
                   sizes="100vw"
                   style={{
-                    width: "50%",
+                    width: "70%",
                     height: "auto",
                   }}
                   alt="me"
-                  src="/Udemy/images/Bricks.png"
+                  src="/Udemy/images/Photo1.png"
+                  layout="fill"
+                  priority={true}
+                />
+              </ControlledZoom>
+
+              <ControlledZoom
+                isZoomed={isZoomed2}
+                // onZoomChange={handleZoomChange}
+                classDialog={"zoom-btn2"}
+              >
+                <Image
+                  onClick={handleImageClick2}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    width: "70%",
+                    height: "auto",
+                  }}
+                  alt="me"
+                  src="/Udemy/images/Photo2.png"
                   layout="fill"
                   priority={true}
                 />
@@ -136,11 +230,21 @@ const Bricks = () => {
             <br />
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
-              {`
-             滑鼠移動
+              {` 【手機、電腦皆可】
             `}
             </p>
-
+            <br />
+            <p style={{ textAlign: "center" }}>
+              {`因為是外國的免費資源
+            `}
+              <br />
+              {`請輸入【英文字查詢】，否則圖片不出現，
+            `}
+              <br />
+              {`如果圖片沒有>15也無法載入更多。
+            `}
+              <br />
+            </p>
             <hr />
             <div
               style={{ paddingTop: "1rem" }}
@@ -176,11 +280,12 @@ const Bricks = () => {
                 <p style={{ margin: "0", textAlign: "center" }}>
                   <a
                     target="_blank"
-                    href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project6_%E5%BD%88%E8%B7%B3%E7%90%83%E9%81%8A%E6%88%B2"
+                    href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project8_PhotoWeb"
                   >
-                    Bouncing
+                    PhotoWeb
                   </a>
                 </p>
+                {/* <p style={{ margin: "0", textAlign: "center" }}>本地端版本</p> */}
               </div>
             </div>
           </section>
@@ -190,4 +295,4 @@ const Bricks = () => {
   );
 };
 
-export default Bricks;
+export default PhotoWeb;

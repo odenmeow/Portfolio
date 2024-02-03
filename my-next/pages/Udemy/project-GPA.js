@@ -94,18 +94,26 @@ const GPA = () => {
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
             <h2>GPA Web</h2>
-
             <p style={{ textAlign: "center" }}>
-              {`製作一個計算GPA的網頁，將JS實際融入專案練習，
-              透過JS達到動態生成元素、animation追加
-              、動畫結束刪除之類的效果。`}
+              {`一個計算GPA的網頁，JS實際融入專案練習，`}
+
               <br />
+              <br />
+              {`透過JS達到動態生成元素、animation追加`}
             </p>
+            <br />
+            <br />
             <h2>設計</h2>
             <p style={{ textAlign: "center" }}>
-              {`比較特別之處是開場做了一個動畫效果，以及增加或刪除資料的小動態感。`}
+              {`比較特別之處是開場做了一個動畫效果，`}
+              <br />
+              <br />
+              {`以及增加或刪除資料的小動態感。`}
+              <br />
+              <br />
+              {`( 排序則使用mergeSort )`}
             </p>
-            <p style={{ textAlign: "center" }}>{`排序則使用mergeSort`}</p>
+            <p style={{ textAlign: "center" }}></p>
             <div className={style["blog-img-container"]}>
               <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
                 <Image
@@ -124,20 +132,14 @@ const GPA = () => {
                 />
               </ControlledZoom>
             </div>
+            <br />
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
-              {`
-             class category可不填
-            `}
-            </p>
-            <p style={{ textAlign: "center" }}>
-              {`
-             class number可不填
-            `}
-            </p>
-            <p style={{ textAlign: "center" }}>
-              {`填credit 0~6 以及 A~F即可
-            `}
+              {`class category可不填`}
+              <br /> <br />
+              {`class number可不填`}
+              <br /> <br />
+              {`填credit 0~6 以及 A~F即可 `}
             </p>
             <hr />
             <div

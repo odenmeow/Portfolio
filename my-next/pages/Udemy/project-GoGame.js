@@ -99,11 +99,11 @@ const GoGame = () => {
           <section className={style.description}>
             <h2> GoGame Web</h2>
             <p style={{ textAlign: "center" }}>
-              {`上課上得差不多後，開始跟著製作第一個課堂專案，將所學應用。`}{" "}
-              <br />
+              {`上得差不多後，開始製作第一個課堂專案，將所學應用。`} <br />
               <br />
               {`沒有太多問題，基本上就呈現畫面與切畫面的應用`}
             </p>
+            <br />
 
             <div className={style["blog-img-container"]}>
               <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
@@ -123,6 +123,8 @@ const GoGame = () => {
                 />
               </ControlledZoom>
             </div>
+            <br />
+
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
               {` 【手機、電腦皆可】

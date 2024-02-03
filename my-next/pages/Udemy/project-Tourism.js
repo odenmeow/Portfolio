@@ -146,14 +146,27 @@ const Tourism = () => {
             <h2>Tourism Web</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`練習排版與設計樣式、因為教了scss，所以Udemy講師就做這個為範例，
-              讓我們跟著學習，實際訓練加強flex、position、transition之類概念`}
+              {`練習排版與設計樣式、因為教了scss，`}
               <br />
+              <br />
+              {`所以Udemy講師就做這個為範例，`}
+              <br />
+              <br />
+
+              {`讓學員跟著學習，實際訓練加強CSS，`}
+              <br />
+              <br />
+              {`flex、position、transition之類概念`}
             </p>
+            <br />
+            <br />
             <h2>修正</h2>
 
             <p style={{ textAlign: "center" }}>
-              {`導覽列fixed的bug，當時沒有考慮手機版本，製作當下發現，還好只需加入bootstrap功能即可`}
+              {`導覽列fixed的bug(左圖)，當時沒有考慮手機版本，`}
+              <br />
+              <br />
+              {`製作線上版本時發現，還好只需加入bootstrap功能即可`}
               <br />
             </p>
             <div
@@ -208,7 +221,7 @@ const Tourism = () => {
             `}
             </p>
             <p style={{ textAlign: "center" }}>
-              {`沒什麼偉大功能，就單純仿照旅遊網站的感覺的網頁
+              {`沒什麼特別功能，就單純仿照旅遊網站的感覺的網頁
             `}
             </p>
 

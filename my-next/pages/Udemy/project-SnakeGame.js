@@ -97,18 +97,21 @@ const SnakeGame = () => {
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
             <h2>Snaker Game</h2>
-
             <p style={{ textAlign: "center" }}>
-              {`製作小遊戲，透過鍵盤上下左右來控制蛇的移動方向，
+              {`小遊戲，透過鍵盤上下左右來控制蛇的移動方向，`}
+              <br /> <br />
+              {`
               主要目的為訓練邏輯、學習如何使用canvas。`}
-              <br />
             </p>
+            <br /> <br />
             <h2>設計</h2>
             <p style={{ textAlign: "center" }}>
-              {`使用鍵盤進行遊戲，主要的功能都在app.js身上，
+              {`使用鍵盤進行遊戲，主要的功能都在app.js身上，  `}
+              <br /> <br />
+              {`
               透過操作canvas畫布 + localStorage 計分，完成作品。`}
             </p>
-
+            <br />
             <div className={style["blog-img-container"]}>
               <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
                 <Image
@@ -127,13 +130,13 @@ const SnakeGame = () => {
                 />
               </ControlledZoom>
             </div>
+            <br /> <br />
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
               {`
              鍵盤上下左右
             `}
             </p>
-
             <hr />
             <div
               style={{ paddingTop: "1rem" }}

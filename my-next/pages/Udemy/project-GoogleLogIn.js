@@ -167,7 +167,7 @@ const GoogleLogIn = () => {
             <h1 style={{ textAlign: "center" }}>Google</h1>
             <h1 style={{ textAlign: "center" }}>登入系統</h1>
             <br />
-            <h3 style={{ textAlign: "center" }}>EJS+OAuth+Express</h3> <br />
+            <h3 style={{ textAlign: "center" }}>OAuth+passport</h3> <br />
             <a
               className={style.stopBubble}
               style={{ position: "relative", left: "16px" }}
@@ -204,12 +204,15 @@ const GoogleLogIn = () => {
             <p style={{ textAlign: "center" }}>
               {`課程包含不少Express後端的部分，`}
               <br />
+              <br />
               {`本次學習Express的Google OAuth授權，`}
+              <br />
               <br />
               {`使用EJS建出網頁，Google登入主要使用 passport套件，`}
               <br />
-
+              <br />
               {`做這個登入系統也用了不少middleware概念，`}
+              <br />
               <br />
               {`做完能更加了解 JS 後端操作。`}
               <br />

@@ -144,29 +144,35 @@ const MongoDB = () => {
         <section id="about-me-head" className={style["about-me"]}>
           <section className={style.description}>
             <h2>Student Web</h2>
-
             <p style={{ textAlign: "center" }}>
-              {`基本上是做Restful API，可以新增、修改、刪除、查詢(取得)學生資料的網站。`}
+              {`基本上是做Restful API，`}
+              <br />
+              <br />
+              {`可以新增、修改、刪除、查詢(取得)學生資料的網站。`}
               <br />
             </p>
+            <br /> <br />
             <h2>技術</h2>
-
             <p style={{ textAlign: "center" }}>
               {`主要是EJS、API、Mongoose的應用`}
+              <br />
               <br />
               {`使用了method-override，
               讓方法覆寫`}
               <br />
+              <br />
               {`讓表單可以送出GET、POST以外的PUT`}
+              <br />
               <br />
               {`實際上也只是模擬而已，為了達成 Restful API`}
               <br />
+              <br />
               {`從後端增加middleware，進行攔截行為，`}
+              <br />
               <br />
               {`
               之後再往下傳遞。`}
             </p>
-
             <p
               style={{ textAlign: "center" }}
             >{`詳細內容可以看下方Github Project-Final`}</p>
@@ -219,6 +225,7 @@ const MongoDB = () => {
                 />
               </ControlledZoom>
             </div>
+            <br /> <br />
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
               {` 【手機、電腦皆可】
@@ -228,7 +235,6 @@ const MongoDB = () => {
               {` 隨意逛逛即可
             `}
             </p>
-
             <hr />
             <div
               style={{ paddingTop: "1rem" }}
