@@ -53,7 +53,52 @@ const YoichiApp = () => {
     let mypic = btn.querySelector("img");
     mypic.style.userSelect = "none";
   };
+  const [isZoomed2, setIsZoomed2] = useState(false);
+  const handleImageClick2 = () => {
+    (function showWarn() {
+      let body = document.querySelector(".zoom-btn2 > div:nth-child(2)");
+      let warn = document.createElement("div");
+      let text = document.createElement("p");
+      text.style.margin = 0;
+      text.innerText = "雙擊可縮小";
+      warn.append(text);
+      warn.className = "noSend alert alert-info";
+      warn.setAttribute("role", "info");
+      warn.style.position = "absolute";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
+      warn.style.width = "content-fit";
+      warn.style.height = "5%";
+      warn.style.margin = "0";
+      warn.style.display = "flex";
+      warn.style.justifyContent = "center";
+      warn.style.alignItems = "center";
+      body.append(warn);
+      warn.addEventListener("animationend", (e) => {
+        // e.target.remove();
+      });
+      warn.style.animation = "opacityTransitions 2.5s ease forwards";
+    })();
 
+    // 點選圖片時進行放大
+
+    console.log("shouldZoom2");
+    setIsZoomed2(true);
+
+    let btn = document.querySelector(".zoom-btn2");
+    btn.addEventListener("dblclick", (e) => {
+      console.log("設定為false");
+      setIsZoomed2(false);
+    });
+
+    btn.querySelector("button").addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed2(false);
+    });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
+  };
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
     // 在這裡進行元素選取和樣式修改
@@ -165,12 +210,13 @@ const YoichiApp = () => {
             <div className={style["blog-img-container"]}>
               <ControlledZoom isZoomed={isZoomed} classDialog="zoom-btn">
                 <Image
+                  classDialog={"zoom-btn2"}
                   onClick={handleImageClick}
                   width={0}
                   height={0}
                   sizes="100vw"
                   style={{
-                    width: "50%",
+                    width: "70%",
                     height: "auto",
                   }}
                   alt="me"
@@ -180,6 +226,27 @@ const YoichiApp = () => {
                 />
               </ControlledZoom>
             </div>
+            <br />
+            <br />
+            <div className={style["blog-img-container"]}>
+              <ControlledZoom isZoomed={isZoomed2} classDialog="zoom-btn2">
+                <Image
+                  onClick={handleImageClick2}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  style={{
+                    width: "70%",
+                    height: "auto",
+                  }}
+                  alt="me"
+                  src="/Oni/images/historyLog.png"
+                  layout="fill"
+                  priority={true}
+                />
+              </ControlledZoom>
+            </div>
+            <br />
             <h2>操作方式</h2>
             <p style={{ textAlign: "center" }}>
               {` 【專為平板設計】
@@ -221,8 +288,8 @@ const YoichiApp = () => {
               <div className={style["blog-img"]}>
                 {/* <h2 style={{ display: "inline-block", margin: "5px" }}>連結</h2> */}
                 <p style={{ margin: "0", textAlign: "center" }}>
-                  <a target="_blank" href="https://youtu.be/MsZpgobP2u0">
-                    實機影片
+                  <a target="_blank" href="https://youtu.be/PCUnlSlI_fI">
+                    YT展示影片
                   </a>
                 </p>
               </div>
