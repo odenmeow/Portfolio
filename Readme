@@ -29,5 +29,5 @@ npm i dotenv
 cd my-next
 npm install react-bootstrap bootstrap
 
-
+npm i axios
 

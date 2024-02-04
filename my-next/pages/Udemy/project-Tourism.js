@@ -274,7 +274,7 @@ const Tourism = () => {
                     target="_blank"
                     href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project2_%E6%97%A5%E6%9C%AC%E6%97%85%E9%81%8A%E7%B6%B2%E7%AB%99"
                   >
-                    Project2_Tourism
+                    Tourism
                   </a>
                 </p>
               </div>

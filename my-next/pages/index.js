@@ -4,7 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css"; // 引入 Bootstrap CSS
 import style from "../styles/Home.module.css";
 import styleB from "../styles/bubble.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Controlled as ControlledZoom } from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 const mainSikksLeft = ["Java", "SpringBoot", "HTML", "CSS", "JavaScript"];
 const mainSikksRight = [
   "Node.js",
@@ -36,6 +39,56 @@ const contactSkillsRight = [
 ];
 export default function Home() {
   let [bubblestatus, setbubblestatus] = useState("go");
+  const [isZoomed, setIsZoomed] = useState(false);
+  useEffect(() => {
+    const awakeServices = async () => {
+      let data = await axios.get("https://portfolio-104l.onrender.com/");
+      console.log("初次運作中(已敲醒webServices)");
+    };
+    awakeServices();
+  }, []);
+  const handleImageClick = () => {
+    (function showWarn() {
+      let body = document.querySelector(".zoom-btn > div:nth-child(2)");
+      let warn = document.createElement("div");
+      let text = document.createElement("p");
+      text.style.margin = 0;
+      text.innerText = "雙擊可縮小";
+      warn.append(text);
+      warn.className = "noSend alert alert-info";
+      warn.setAttribute("role", "info");
+      warn.style.position = "absolute";
+      warn.style.right = "5%";
+      warn.style.bottom = "5%";
+      warn.style.width = "content-fit";
+      warn.style.height = "5%";
+      warn.style.margin = "0";
+      warn.style.display = "flex";
+      warn.style.justifyContent = "center";
+      warn.style.alignItems = "center";
+      body.append(warn);
+      warn.addEventListener("animationend", (e) => {
+        // e.target.remove();
+      });
+      warn.style.animation = "opacityTransitions 2.5s ease forwards";
+    })();
+
+    // 點選圖片時進行放大
+
+    console.log("shouldZoom");
+    setIsZoomed(true);
+
+    let btn = document.querySelector(".zoom-btn");
+    btn.addEventListener("dblclick", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+
+    btn.querySelector("button").addEventListener("click", (e) => {
+      console.log("設定為false");
+      setIsZoomed(false);
+    });
+  };
   const bubbleTogglehandler = (e) => {
     let wrap = document.querySelector(".bubbleCluster");
     wrap.classList.toggle("bubbleShow");
@@ -320,17 +373,27 @@ export default function Home() {
           </table>
         </section>
         <section className={style.picture}>
-          <Image
-            className={style.nextImage}
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: "80%", height: "auto" }}
-            alt="me"
-            src="/project3/images/portrait.jpg"
-            layout="fill"
-            priority={true}
-          />
+          <ControlledZoom
+            isZoomed={isZoomed}
+            // onZoomChange={handleZoomChange}
+            classDialog={"zoom-btn"}
+          >
+            <Image
+              className={style.nextImage}
+              onClick={handleImageClick}
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{
+                width: "80%",
+                height: "auto",
+              }}
+              alt="me"
+              src="/project3/images/portrait.jpg"
+              layout="fill"
+              priority={true}
+            />
+          </ControlledZoom>
 
           <div className={style.greenRect1}></div>
           <div className={style.greenRect2}></div>

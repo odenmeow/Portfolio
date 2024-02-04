@@ -174,9 +174,9 @@ const SnakeGame = () => {
                 <p style={{ margin: "0", textAlign: "center" }}>
                   <a
                     target="_blank"
-                    href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project4_%E6%88%90%E7%B8%BE%E8%A8%88%E7%AE%97%E7%B6%B2%E7%AB%99"
+                    href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project5_%E8%B2%AA%E9%A3%9F%E8%9B%87%E9%81%8A%E6%88%B2"
                   >
-                    Compute GPA
+                    SnakeGame
                   </a>
                 </p>
               </div>

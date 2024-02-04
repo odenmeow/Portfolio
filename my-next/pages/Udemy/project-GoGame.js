@@ -171,7 +171,7 @@ const GoGame = () => {
                     target="_blank"
                     href="https://github.com/odenmeow/UdemyFullStack/tree/master/Project1_%E5%9C%8D%E6%A3%8B%E7%B6%B2%E7%AB%99"
                   >
-                    Project1_GoGame
+                    GoGame
                   </a>
                 </p>
               </div>

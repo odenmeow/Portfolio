@@ -166,21 +166,12 @@ const FlipCard = () => {
           <div style={{ position: "relative" }} className={style.info}>
             <h1 style={{ textAlign: "center" }}>Original Shop</h1>
             <br />
-            <h3 style={{ textAlign: "center" }}>Made with Java</h3> <br />
-            <a
-              className={style.stopBubble}
-              style={{ position: "relative", left: "16px" }}
-              target="_blank"
-              href="https://portfolio-104l.onrender.com/project7/index"
-            >
-              直接前往
-            </a>
-            <a
-              style={{ position: "absolute", right: "16px" }}
-              href="#about-me-head"
-            >
-              了解更多
-            </a>
+            <h3 style={{ textAlign: "center" }}>Java</h3> <br />
+            <div className={style["blog-img-container"]}>
+              <a style={{ position: "center" }} href="#about-me-head">
+                了解更多
+              </a>
+            </div>
           </div>
         </section>
 
@@ -246,7 +237,7 @@ const FlipCard = () => {
               <br />
               <br />
               <br />
-              {`除了後端，前端也會介入幫忙，`}
+              {`除了後端，前端也會適時幫忙，`}
               <br />
               <br />
               {`另外主要負責綠界物流的邏輯，`}

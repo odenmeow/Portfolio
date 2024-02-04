@@ -166,21 +166,12 @@ const FlipCard = () => {
           <div style={{ position: "relative" }} className={style.info}>
             <h1 style={{ textAlign: "center" }}>翻卡牌遊戲</h1>
             <br />
-            <h3 style={{ textAlign: "center" }}>Made with Java</h3> <br />
-            <a
-              className={style.stopBubble}
-              style={{ position: "relative", left: "16px" }}
-              target="_blank"
-              href="https://portfolio-104l.onrender.com/project7/index"
-            >
-              直接前往
-            </a>
-            <a
-              style={{ position: "absolute", right: "16px" }}
-              href="#about-me-head"
-            >
-              了解更多
-            </a>
+            <h3 style={{ textAlign: "center" }}>Java</h3> <br />
+            <div className={style["blog-img-container"]}>
+              <a style={{ position: "center" }} href="#about-me-head">
+                了解更多
+              </a>
+            </div>
           </div>
         </section>
 
@@ -202,7 +193,7 @@ const FlipCard = () => {
               {`不是預先就寫死程式視窗大小，`}
               <br />
               <br />
-              {`以及能夠提供卡片畫面。`}
+              {`以及能夠由使用者提供卡片。`}
             </p>
             <br />
 
@@ -231,7 +222,7 @@ const FlipCard = () => {
               {`使用了不少Hash、ArrayList幫忙，`}
               <br />
               <br />
-              {`有些圖片是假的jpg，程式會無法運作!`}
+              {`也曾有圖片是假jpg，使程式無法運作。`}
               <br />
               <br />
             </p>
