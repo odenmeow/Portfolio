@@ -56,8 +56,9 @@ export default function Home() {
     // imgParent.style.cssText = "display: flex; justify-content: center; align-items: center;";
 
     const awakeServices = async () => {
-      let data = await axios.get("https://portfolio-104l.onrender.com/");
+      let data = await axios.get("https://portfolio-104l.onrender.com/awake");
       console.log("初次運作中(已敲醒webServices)");
+      console.log(data);
     };
     const awakeServicesMERN = async () => {
       let data = await axios.get(
