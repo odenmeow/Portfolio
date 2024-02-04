@@ -22,8 +22,9 @@ const GoGame = () => {
       warn.className = "noSend alert alert-info";
       warn.setAttribute("role", "info");
       warn.style.position = "absolute";
-      warn.style.right = "5%";
-      warn.style.bottom = "5%";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
       warn.style.width = "content-fit";
       warn.style.height = "5%";
       warn.style.margin = "0";
@@ -52,6 +53,8 @@ const GoGame = () => {
       console.log("設定為false");
       setIsZoomed(false);
     });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
   };
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
@@ -74,7 +77,7 @@ const GoGame = () => {
         {/* Add your custom 404 content here */}
         <section className={style["main-area"]}>
           <div style={{ position: "relative" }} className={style.info}>
-            <h1 style={{ textAlign: "center" }}>圍棋網站</h1>
+            <h1 style={{ textAlign: "center" }}>圍棋資訊網</h1>
             <br />
             <h3 style={{ textAlign: "center" }}>學後應用HTML+CSS</h3>
 

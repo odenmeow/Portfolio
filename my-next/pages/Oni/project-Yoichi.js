@@ -19,8 +19,9 @@ const YoichiApp = () => {
       warn.className = "noSend alert alert-info";
       warn.setAttribute("role", "info");
       warn.style.position = "absolute";
-      warn.style.right = "5%";
-      warn.style.bottom = "5%";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
       warn.style.width = "content-fit";
       warn.style.height = "5%";
       warn.style.margin = "0";
@@ -49,6 +50,8 @@ const YoichiApp = () => {
       console.log("設定為false");
       setIsZoomed(false);
     });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
   };
 
   useEffect(() => {
@@ -125,10 +128,16 @@ const YoichiApp = () => {
 
             <h2>設計</h2>
             <p style={{ textAlign: "center" }}>
+              {`原先想做連線版本，後來考慮後放棄，`}
+              <br />
+              <br />
+              {`所以會員就沒有特別製作了，另外，`}
+              <br />
+              <br />
               {`儲存選localStorage，因為方便、`}
               <br />
               <br />
-              {`不須額外連線成本，設置靜態網頁，`}
+              {`不須額外連線成本，製成靜態網頁，`}
               <br />
               <br />
               {`很快就能回應，Render靜態網頁不降速。`}

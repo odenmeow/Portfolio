@@ -81,8 +81,9 @@ export default function Home() {
       warn.className = "noSend alert alert-info";
       warn.setAttribute("role", "info");
       warn.style.position = "absolute";
-      warn.style.right = "5%";
-      warn.style.bottom = "5%";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
       warn.style.width = "content-fit";
       warn.style.height = "5%";
       warn.style.margin = "0";
@@ -111,6 +112,8 @@ export default function Home() {
       console.log("設定為false");
       setIsZoomed(false);
     });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
   };
   const bubbleTogglehandler = (e) => {
     let wrap = document.querySelector(".bubbleCluster");
@@ -402,7 +405,7 @@ export default function Home() {
             classDialog={"zoom-btn"}
           >
             <Image
-              className={style.nextImage}
+              className={style["nextImage"]}
               onClick={handleImageClick}
               width={0}
               height={0}

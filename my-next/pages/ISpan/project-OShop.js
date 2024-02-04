@@ -24,8 +24,9 @@ const FlipCard = () => {
       warn.className = "noSend alert alert-info";
       warn.setAttribute("role", "info");
       warn.style.position = "absolute";
-      warn.style.right = "5%";
-      warn.style.bottom = "5%";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
       warn.style.width = "content-fit";
       warn.style.height = "5%";
       warn.style.margin = "0";
@@ -54,6 +55,8 @@ const FlipCard = () => {
       console.log("設定為false");
       setIsZoomed(false);
     });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
   };
 
   const [isZoomed2, setIsZoomed2] = useState(false);
@@ -68,8 +71,9 @@ const FlipCard = () => {
       warn.className = "noSend alert alert-info";
       warn.setAttribute("role", "info");
       warn.style.position = "absolute";
-      warn.style.right = "5%";
-      warn.style.bottom = "5%";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
       warn.style.width = "content-fit";
       warn.style.height = "5%";
       warn.style.margin = "0";
@@ -98,6 +102,8 @@ const FlipCard = () => {
       console.log("設定為false");
       setIsZoomed2(false);
     });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
   };
 
   const [isZoomed3, setIsZoomed3] = useState(false);
@@ -112,8 +118,9 @@ const FlipCard = () => {
       warn.className = "noSend alert alert-info";
       warn.setAttribute("role", "info");
       warn.style.position = "absolute";
-      warn.style.right = "5%";
-      warn.style.bottom = "5%";
+      warn.style.right = "50%";
+      warn.style.bottom = "85%";
+      warn.style.transform = "translate(50%,0)";
       warn.style.width = "content-fit";
       warn.style.height = "5%";
       warn.style.margin = "0";
@@ -142,6 +149,8 @@ const FlipCard = () => {
       console.log("設定為false");
       setIsZoomed3(false);
     });
+    let mypic = btn.querySelector("img");
+    mypic.style.userSelect = "none";
   };
   useEffect(() => {
     // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!

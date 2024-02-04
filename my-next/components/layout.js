@@ -13,7 +13,7 @@ import styleB from "../styles/bubble.module.css";
 
 const navTitle = "CHEN I";
 const UdemyProjectArray = [
-  { link: "/Udemy/project-GoGame", name: "圍棋網站" },
+  { link: "/Udemy/project-GoGame", name: "圍棋資訊網站" },
   { link: "/Udemy/project-Tourism", name: "日本旅遊網站" },
   { link: "/Udemy/project-GPA", name: "成績計算網站" },
   { link: "/Udemy/project-SnakeGame", name: "貪食蛇" },
