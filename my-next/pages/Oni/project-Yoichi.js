@@ -212,7 +212,7 @@ const YoichiApp = () => {
               <div className={style["blog-img"]}>
                 {/* <h2 style={{ display: "inline-block", margin: "5px" }}>連結</h2> */}
                 <p style={{ margin: "0", textAlign: "center" }}>
-                  <a target="_blank" href="https://youtu.be/1lrZnBvX0ho">
+                  <a target="_blank" href="https://youtu.be/MsZpgobP2u0">
                     實機影片
                   </a>
                 </p>
