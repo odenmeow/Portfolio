@@ -59,7 +59,15 @@ export default function Home() {
       let data = await axios.get("https://portfolio-104l.onrender.com/");
       console.log("初次運作中(已敲醒webServices)");
     };
+    const awakeServicesMERN = async () => {
+      let data = await axios.get(
+        "https://server-vf7h.onrender.com/api/user/testAPI"
+      );
+      // DATA會得到 "成功連接auth route"
+      console.log("初次運作中(已敲醒MERNwebServices)");
+    };
     awakeServices();
+    awakeServicesMERN();
   }, []); // 這個空的[]確保這個 effect 只執行一次，即在組件渲染後
   const handleImageClick = () => {
     (function showWarn() {
