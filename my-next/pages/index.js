@@ -40,13 +40,27 @@ const contactSkillsRight = [
 export default function Home() {
   let [bubblestatus, setbubblestatus] = useState("go");
   const [isZoomed, setIsZoomed] = useState(false);
+
   useEffect(() => {
+    // 因為 ControlledZoom 替我製作多了一層div 所以要在渲染完畢後製作置中功能!
+    // 在這裡進行元素選取和樣式修改
+    let imgs = document.querySelectorAll("img");
+    imgs.forEach((img) => {
+      let imgParent = img.parentElement;
+      if (imgParent.hasAttribute("data-rmiz-content")) {
+        imgParent.style.display = "flex";
+        imgParent.style.justifyContent = "center";
+        imgParent.style.alignItems = "center";
+      }
+    });
+    // imgParent.style.cssText = "display: flex; justify-content: center; align-items: center;";
+
     const awakeServices = async () => {
       let data = await axios.get("https://portfolio-104l.onrender.com/");
       console.log("初次運作中(已敲醒webServices)");
     };
     awakeServices();
-  }, []);
+  }, []); // 這個空的[]確保這個 effect 只執行一次，即在組件渲染後
   const handleImageClick = () => {
     (function showWarn() {
       let body = document.querySelector(".zoom-btn > div:nth-child(2)");
